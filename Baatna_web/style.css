@@ -41,7 +41,14 @@
             border-radius: 5px;
             border: 1px solid rgba(49, 210, 170, 1);
         }
-        
+        a.active{
+            color: rgba(49, 210, 170, 1) !important;
+        }
+        li.active {
+            border-radius: 5px;
+            border: 1px solid rgba(49, 210, 170, 1);
+        }
+
         .header a.button {
             background-color: transparent;
             color: #666;
@@ -64,7 +71,7 @@
              }
         
         .phone_container{
-            position:absolute; width:400px; bottom:4px; right: 224px;
+            position:absolute; width:400px; bottom:0px; right: 224px;
         }
 
         .header .sign_up:hover {
@@ -99,16 +106,16 @@
         }
         
         .signup .button {
-            background-color: rgba(49, 210, 170, 1);
+            background-color: #666666;
             border-radius: 5px;
-            border: 1px solid rgba(49, 210, 170, 1);
+            border: 1px solid #666666;
             font-size: 14px;
             padding: 20px;
             color: white;
         }
         
         .sect2 img {
-            width: 80%;
+            width: 90%;
             text-align: center;
         }
         
@@ -117,7 +124,7 @@
         }
         
         .feature_image-2 {
-            height: 140px;
+            height: 100px;
         }
         
         .toggle_ele {
@@ -126,26 +133,42 @@
         }
         
         .second-feature-section {
-            margin-top: 30px;
+            margin-top: 55px;
         }
         
         .sect2 p {
             margin-top: 15px;
             margin-bottom: 0;
-            font-size: 13px;
+            font-size: 14px !important;
+        }
+
+        #about1 p{
+            margin-right: 60px;
+        }
+
+        #about2 p{
+            margin-left: 5px;
         }
         
+        #about3 p{
+            margin-left: 45px;
+        }
+
         .sect3 p {
             margin-top: 15px;
             margin-bottom: 0;
-            font-size: 13px;
+            font-size: 13px !important ;
         }
         
         .sect3 li {
-            padding: 0 5%;
+            padding: 0 1%;
+        }
+
+        .sect3. h1 {
+            margin-bottom: 25px;
         }
         
-        .sect3 .highlight_link span {
+        .sect3 .highlight_link span, .referals p{
             vertical-align: middle;
             margin-top: 48px;
             font-weight: bold;
@@ -154,6 +177,11 @@
             display: inline;
             padding-bottom: 5px;
             text-transform: uppercase;
+        }
+
+        .referals p{
+            border-bottom: none !important;
+            font-size: 13px !important;
         }
         
         .sect3 .highlight_link .spacer {
@@ -354,7 +382,7 @@
         .cap-bot:hover figcaption { bottom: 0; }
 
         input.button.postfix {
-            background-color: rgba(49, 210, 170, 1);
+            background-color: #888888;
             border-color: transparent;
         }
 
@@ -451,3 +479,16 @@
 
 
         /* slider section ends */ 
+
+        hr {
+            border-color: #EFEFEF !important;
+        }
+
+        #sign-up2{
+            font-size: 16px !important;
+        }
+
+        #signup2 p{
+            line-height: 1.8px !important;
+        }
+
