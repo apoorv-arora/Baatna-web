@@ -39,10 +39,13 @@
         .header li:hover,
         .header li.active {
             border-radius: 5px;
-            border: 1px solid rgba(49, 210, 170, 1);
+            /* border: 1px solid rgba(49, 210, 170, 1); */
         }
         a.active{
             color: rgba(49, 210, 170, 1) !important;
+        }
+        a.hover {
+            color: rgba(49, 210, 170, 1) !important;;
         }
         li.active {
             border-radius: 5px;
@@ -60,10 +63,14 @@
         
         .outer_wrapper {
             height: calc(100% - 320px);
-            background-image: url("images/home back-14 2.png");
             background-size: 100% 100%;
             background-repeat: no-repeat;
             position: relative;
+        }
+
+        .illustrations {
+            width:100%;
+            position: fixed;
         }
         
         .intro {
@@ -112,6 +119,10 @@
             font-size: 14px;
             padding: 20px;
             color: white;
+        }
+
+        .sect2 {
+            background: white !important;
         }
         
         .sect2 img {
@@ -216,7 +227,7 @@
         }
         
         .sect2 {
-            margin: 80px 0;
+            padding: 80px 0 0px;
         }
         
         .sect3 {
@@ -224,7 +235,8 @@
         }
         
         .sect4 {
-            margin: 80px 0;
+            background: url("images/gradient-20.png") repeat scroll 0% 0% / 100% 100%;
+            padding: 80px 0;
         }
         
         .sect4 h1,
@@ -236,6 +248,10 @@
             font-family: globerbold;
             margin-bottom: 30px;
             margin-top: 20px;
+        }
+
+        .sect2 h1{
+            padding-bottom: 10px;
         }
         
         .sect6 .button {
@@ -257,7 +273,7 @@
         }
         
         .footer_nav {
-            margin-top: 15px;
+            margin-top: 20px;
         }
         
         .footer_nav a {
