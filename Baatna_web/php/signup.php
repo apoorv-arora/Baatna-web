@@ -1,17 +1,13 @@
 <?php
-	DEFINE('DB_USERNAME', 'root');
-	DEFINE('DB_PASSWORD', 'root');
-	DEFINE('DB_HOST', 'localhost');
-	DEFINE('DB_PORT', '8889');
-	DEFINE('DB_DATABASE', 'Baatna');
+require_once('defines.php');
 
-	$mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+$mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
- if (mysqli_connect_error()) {
+if (mysqli_connect_error()) {
   die('Connect Error ('.mysqli_connect_errno().') '.mysqli_connect_error());
- }
+}
 
- echo 'Connected successfully.';
+echo 'Connected successfully.';
 
 
 
@@ -27,10 +23,11 @@ echo "Inside sign up script";
 $sql = "INSERT INTO SignUps (Email) VALUES ($_POST[signupemail])";
 
 if ($mysqli->query($sql) === TRUE) {
-    echo "New record created successfully";
+  echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $mysqli->error;
+  echo "Error: " . $sql . "<br>" . $mysqli->error;
 }
 
 $mysqli->close();
-?>
+// It is recommended to not close php tags as they might leave random whitespace. 
+// More info : http://stackoverflow.com/questions/5701747/should-i-close-my-php-tags
