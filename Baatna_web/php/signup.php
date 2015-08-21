@@ -1,33 +1,26 @@
 <?php
 require_once('defines.php');
 
+if(!isset($_POST['signupemail'])) {
+  respond(true, "Email ID is a required field");
+}
+if(!filter_var($_POST['signupemail'], FILTER_VALIDATE_EMAIL)) {
+  respond(true, "Invalid email ID");
+}
 $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-if (mysqli_connect_error()) {
-  die('Connect Error ('.mysqli_connect_errno().') '.mysqli_connect_error());
+if(mysqli_connect_error()) {
+  respond(true, "Couldn't connect to database.", mysqli_connect_error());
 }
 
-echo 'Connected successfully.';
-
-
-
-// Create connection
-echo "Inside sign up script";
-//$conn = new mysqli($servername, $username, $password, $dbname, $port);
-// Check connection
-// if ($mysqli->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }  else
-// 	echo "";
-
-$sql = "INSERT INTO SignUps (Email) VALUES ($_POST[signupemail])";
-
-if ($mysqli->query($sql) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $mysqli->error;
-}
+$stmt = $mysqli->prepare("INSERT INTO SignUps (Email) VALUES ?");
+$stmt->bind_param('s', $_POST['signupemail']);
+$stmt->execute();
 
 $mysqli->close();
-// It is recommended to not close php tags as they might leave random whitespace. 
-// More info : http://stackoverflow.com/questions/5701747/should-i-close-my-php-tags
+
+if($stmt->affected_rows === 1) {
+  respond(false, "Successfully signed up");
+} else {
+  respond(true, "Error in inserting your email to our database", $stmt->error); 
+}

@@ -1,22 +1,31 @@
 <?php
 require_once('defines.php');
 
-$conn = new conn(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-// Create connection
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-} 
-
-$sql = "INSERT INTO ContactUs (Name, Email, Subject, Message)
-  VALUES ($_POST[name], $_POST[email], $_POST[subject], $_POST[message])";
-
-if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
 
 $conn->close();
-// It is recommended to not close php tags as they might leave random whitespace. 
-// More info : http://stackoverflow.com/questions/5701747/should-i-close-my-php-tags
+<?php
+require_once('defines.php');
+
+if(!isset($_POST['email'])) {
+  respond(true, "Email ID is a required field");
+}
+if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+  respond(true, "Invalid email ID");
+}
+$mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+
+if(mysqli_connect_error()) {
+  respond(true, "Couldn't connect to database.", mysqli_connect_error());
+}
+
+$stmt = $mysqli->prepare("INSERT INTO ContactUs (Name, Email, Subject, Message) VALUES (?, ?, ?, ?)");
+$stmt->bind_param('ssss', $_POST['name'], $_POST['email'], $_POST['subject'], $_POST['message']);
+$stmt->execute();
+
+$mysqli->close();
+
+if($stmt->affected_rows === 1) {
+  respond(false, "Thanks for your input. We'll get back to your shortly");
+} else {
+  respond(true, "Error in inserting your message to our database", $stmt->error); 
+}
