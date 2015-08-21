@@ -1,11 +1,6 @@
 <?php
 require_once('defines.php');
 
-
-$conn->close();
-<?php
-require_once('defines.php');
-
 if(!isset($_POST['email'])) {
   respond(true, "Email ID is a required field");
 }

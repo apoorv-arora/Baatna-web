@@ -6,5 +6,5 @@ DEFINE('DB_PORT', '8889');
 DEFINE('DB_DATABASE', 'Baatna');
 
 function respond($err, $msg, $data = []) { // Function to return JSON response
-  die(json_encode(new Array('error' => $err, 'msg' => $msg, 'data' => $data)));
+  die(json_encode(array('error' => $err, 'msg' => $msg, 'data' => $data)));
 }
