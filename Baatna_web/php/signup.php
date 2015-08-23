@@ -16,6 +16,10 @@ if(mysqli_connect_error()) {
   respond(true, "Couldn't connect to database.", mysqli_connect_error());
 }
 
+// TODO: Check if the email exists in referrals table. If it does then it's corresponding referrer should get merch
+//$stmt = $mysqli->prepare("SELECT email FROM users WHERE uid = (SELECT uid FROM referrals WHERE email = ?)");
+// TODO: If this is an referred user then remove it from referrals
+
 $token = getToken($_POST['signupemail']);
 $stmt = $mysqli->prepare("INSERT INTO users (email, token) VALUES (?, ?)");
 $stmt->bind_param('ss', $_POST['signupemail'], $token);
