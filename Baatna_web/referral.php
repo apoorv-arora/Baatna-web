@@ -1,13 +1,28 @@
 <?php
-  if(!isset($_GET['token'])) header("Location: index.html");
-  $token = $_GET['token'];
-  // query database to get details of the token
-  $personDetails = ["name" => "John Doe", "email" => "john@doe.com"];
+require_once('php/defines.php');
+
+if(!isset($_GET['token'])) header("Location: index.html");
+$token = $_GET['token'];
+$mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+
+if(mysqli_connect_error()) { respond(true, "Couldn't connect to database.", mysqli_connect_error()); }
+
+$stmt = $mysqli->prepare("SELECT uid, email FROM users WHERE token = ?");
+$stmt->bind_param('s', $token);
+$stmt->execute();
+$stmt->bind_result($uid, $referrerEmail);
+$stmt->fetch();
+$stmt->close();
+$mysqli->close();
+
+// query database to get details of the token
+$personDetails = ["uid" => $uid, "email" => $referrerEmail];
 ?>
 <!DOCTYPE html>
 <html ng-app="myApp">
 
   <head>
+    <meta charset="utf-8"/>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -53,7 +68,7 @@
     <header class="header" data-scroll-speed="3">
       <div class="row">
         <div class="large-3 columns">
-          <h1><a href="index1.html" class=""><img class="logo top_bar"src="images/baatna web-02.png"></a></h1></div>
+          <h1><a href="index.html" class=""><img class="logo top_bar"src="images/baatna web-02.png"></a></h1></div>
         <div class="large-9 columns">
           <div class="row right">
             <ul class="button-group top_padd">
@@ -82,12 +97,13 @@
         <div class="row" data-scroll-speed="7">
           <div class=" columns medium-8">
             <div class="hero_desc">
-            <h2>Welcome <?php echo $personDetails['name'];?></h2>
-              <h2>Refer Baatna to your friends and collegues</h2>
+            <h2>Welcome <?php echo $personDetails['email'];?></h2>
+              <h2>Refer Baatna to your friends and colleagues</h2>
             </div>
             <div class='detail'>
-              <form action="php/refer.php">
+              <form action="php/refer.php" method="post" id="referralForm">
                 <label>Enter email ids of your friends you wish to refer baatna to.</label>
+                <input class="hidden" name="token" id="token" value="<?php echo $token; ?>"hidden/>
                 <textarea class="form-control" rows="3" id="emails" name="emails" placeholder="Enter comma-separated email ids"/></textarea>
                 <button class="button">Refer Baatna</button>
               </form>
@@ -100,34 +116,17 @@
       </div>
 
     </div>
-    <!---
 
       <div id="Confirm_pop" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
       <h2 id="modalTitle">Thanks for signing up for the preview</h2>
       <p class="lead">Check your mail for more details!</p>
       <a class="close-reveal-modal" aria-label="Close">&#215;</a>
       </div>  
-
-      ---->
-
-      <script type="text/javascript">
-$('#signupsubmit').click(function()
-    {
-      $.ajax({
-        url: 'php/signup.php',
-        type:'POST',
-        data:
-        {
-          Email: $("#signupemail").value
-        },
-        success: function()
-        {
-
-        }               
-      });
-    });
-      </script>
-
+    <div id="Error_pop" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+      <h2 id="modalTitle">Oops, we ran into some issues.</h2>
+      <p class="lead"><span id="errorDetails"></span></p>
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>  
 
       <div id="form_pop" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <h2 id="modalTitle">Would love to hear from you!</h2>
@@ -153,28 +152,6 @@ $('#signupsubmit').click(function()
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
       </div>
 
-      <script type="text/javascript">
-$('#submit').click(function()
-    {
-      $.ajax({
-        url: 'php/contact.php',
-        type:'POST',
-        data:
-        {
-          Name: $("#name").value,
-          Email: $("#email").value,
-          Subject: $("#subject").value,
-          Message: $("#message").value
-        },
-        success: function()
-        {
-          $("#form_pop").hide();
-        }               
-      });
-    });
-      </script>
-
-
       <footer>
         <div class="row">
           <div class="large-3 columns">
@@ -195,66 +172,8 @@ $('#submit').click(function()
         </div>
       </footer>
 
-
-
-      <script type="text/javascript" src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
-      <script TYPE="text/javascript">
-//auto expand textarea
-function adjust_textarea(h) {
-  h.style.height = "20px";
-  h.style.height = (h.scrollHeight)+"px";
-}
-      </script>
-
-      <script type="text/javascript">
-$(function(){
-  var boxes = $('[data-scroll-speed]'),
-  $window = $(window);
-  $window.on('scroll', function(){
-    var scrollTop = $window.scrollTop();
-    boxes.each(function(){
-      var $this = $(this),
-      scrollspeed = parseInt($this.data('scroll-speed')),
-      val = - scrollTop / scrollspeed;
-      $this.css('transform', 'translateY(' + val + 'px)');
-    });
-  });
-})
-
-      </script>
-
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.js"></script>
-      <script type="text/javascript">
-$(document).foundation();
-
-$(document).ready(function() {
-
-  $(".toggle_ele").click(function() {
-
-    $(".all_features").eq(0).removeClass("show").addClass("hide");
-    $(".all_features").eq(1).removeClass("hide").addClass("show");
-
-    $(".second-feature-section").removeClass("hide");
-
-
-  });
-
-  $(".header a.button").click(function(e) {
-    e.preventDefault();
-
-    var t = $(this).data("tab");
-    console.log(t);
-
-    $('html, body').animate({
-      scrollTop: $("[data-section=" + t + "]").offset().top - 30
-    }, 300);
-
-  });
-
-
-
-});
-      </script>
+      <script src="js/refer.js"></script>
   </body>
-
 </html>

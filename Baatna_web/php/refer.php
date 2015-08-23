@@ -24,30 +24,19 @@ if(mysqli_connect_error()) {
   respond(true, "Couldn't connect to database.", mysqli_connect_error());
 }
 
-$stmt = $mysqli->query("SELECT uid, email FROM users WHERE token = ?");
+$stmt = $mysqli->prepare("SELECT uid, email FROM users WHERE token = ?");
 $stmt->bind_param('s', $token);
 $stmt->execute();
 $stmt->bind_result($uid, $referrerEmail);
 $stmt->fetch();
 $stmt->close();
 
-$queryString = "INSERT INTO refer (uid, email) VALUES ";
-for($i = 0; $i < count($emails); $i++) {
-  $queryString .= ("(?,?)" . ($i !== count($emails) - 1)?",":"");
-}
-
-$stmt = $mysqli->prepare($queryString);
-
 foreach($emails as $email) {
+  $stmt = $mysqli->prepare( "INSERT INTO referrals (uid, email) VALUES (?, ?)");
   $stmt->bind_param('ss', $uid, $email);
+  $stmt->execute();
 }
-$stmt->execute();
 
 $mysqli->close();
 
-if($stmt->affected_rows === 1) {
-  mail($_POST['signupemail'], WELCOME_MAIL_SUBJECT, WELCOME_MAIL_MESSAGE, 'From: contactus@baatna.com' . "\r\n");
-  respond(false, "Successfully signed up");
-} else {
-  respond(true, "Error in inserting your email to our database", $stmt->error); 
-}
+respond(false, "Successfully added the referrals.");

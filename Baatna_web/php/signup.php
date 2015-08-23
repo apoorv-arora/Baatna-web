@@ -33,7 +33,7 @@ if($stmt->affected_rows === 1) {
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
     in culpa qui officia deserunt mollit anim id est laborum.\n\r
     Visit http://baatna.com/referral.php?token={$token} to refer it to your friends", 'From: contactus@baatna.com' . "\r\n");
-  respond(false, "Successfully signed up");
+  respond(false, "Successfully signed up", [$token]);
 } else {
   respond(true, "Error in inserting your email to our database", $stmt->error); 
 }
