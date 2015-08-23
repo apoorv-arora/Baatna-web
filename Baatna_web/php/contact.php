@@ -13,7 +13,7 @@ if(mysqli_connect_error()) {
   respond(true, "Couldn't connect to database.", mysqli_connect_error());
 }
 
-$stmt = $mysqli->prepare("INSERT INTO ContactUs (Name, Email, Subject, Message) VALUES (?, ?, ?, ?)");
+$stmt = $mysqli->prepare("INSERT INTO contact_us (name, email, subject, message) VALUES (?, ?, ?, ?)");
 $stmt->bind_param('ssss', $_POST['name'], $_POST['email'], $_POST['subject'], $_POST['message']);
 $stmt->execute();
 
