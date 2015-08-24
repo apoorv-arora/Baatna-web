@@ -1,0 +1,6 @@
+{
+  "name": "Baatna-web",
+  "require": {
+    "phpmailer/phpmailer": "~5.2"
+  }
+}

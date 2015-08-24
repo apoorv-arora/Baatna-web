@@ -24,15 +24,16 @@ $stmt->execute();
 $mysqli->close();
 
 if($stmt->affected_rows === 1) {
-  mail( $_POST['signupemail'], WELCOME_MAIL_SUBJECT, "Welcome to Baatna.\n\r 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
-    in culpa qui officia deserunt mollit anim id est laborum.\n\r
-    Visit http://baatna.com/referral.php?token={$token} to refer it to your friends", 'From: contactus@baatna.com' . "\r\n");
+  //Set who the message is to be sent to
+  $mail->addAddress($_POST['signupemail'], 'John Doe');
+
+  //Set the subject line
+  $mail->Subject = WELCOME_MAIL_SUBJECT;
+  // TODO : Content for the mail
+  $mail->Body = "Welcome to Baatna.\n\r Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\r Visit http://baatna.com/referral.php?token={$token} to refer it to your friends";
+
+  $mail->send();
+
   respond(false, "Successfully signed up", [$token]);
 } else {
   respond(true, "Error in inserting your email to our database", $stmt->error); 
