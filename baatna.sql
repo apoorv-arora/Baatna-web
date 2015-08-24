@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 24, 2015 at 01:10 PM
+-- Generation Time: Aug 24, 2015 at 01:54 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.5.27
 
@@ -56,7 +56,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(50) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
   `token` varchar(200) NOT NULL,
-  `successful_referrals` int(11) NOT NULL,
   `signup_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 

@@ -2,9 +2,11 @@ $('#submit').click(function() {
   $.ajax({
     url: 'php/contact.php',
     type:'POST',
-    data: { Name: $("#name").value, Email: $("#email").value, Subject: $("#subject").value, Message: $("#message").value },
-    success: function() {
-      $("#form_pop").hide();
+    data: { name: $("#name").val(), email : $("#email").val(), subject: $("#subject").val(), message: $("#message").val() },
+    dataType: "json",
+    success: function(r) {
+      if(!r.error)
+        $("#form_pop").hide();
     }               
   });
 });
@@ -39,4 +41,4 @@ $(function(){
     $('html, body').animate({ scrollTop: $("[data-section=" + t + "]").offset().top - 30 }, 300);
   });
 })
-$(document).foundation();
+//$(document).foundation();

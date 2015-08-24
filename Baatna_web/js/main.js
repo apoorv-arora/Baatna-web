@@ -12,7 +12,7 @@ function signupHandler(e) {
         $("#Confirm_pop").foundation('reveal', 'open');
         $('#signupForm').hide();
       } else {
-        $("#errorDetails").html(r.msg);
+        $("#errorDetails").html(r.msg + "<small>" + r.data + "</small>");
         $("#Error_pop").foundation('reveal', 'open');
       }
     }

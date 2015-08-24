@@ -118,8 +118,8 @@ $mysqli->close();
     </div>
 
       <div id="Confirm_pop" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-      <h2 id="modalTitle">Thanks for signing up for the preview</h2>
-      <p class="lead">Check your mail for more details!</p>
+      <h2 id="modalTitle">Thanks for referring Baatna!</h2>
+      <p class="lead">Stay in touch to get merchandise !</p>
       <a class="close-reveal-modal" aria-label="Close">&#215;</a>
       </div>  
     <div id="Error_pop" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
