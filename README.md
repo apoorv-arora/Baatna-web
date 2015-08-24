@@ -22,8 +22,6 @@ Assignment 1
       A : __referrals__ table has uid -> email, so a simple SQL query can do it
 
           `SELECT count(email) FROM users WHERE email IN (SELECT email FROM referrals WHERE uid = ?)`
-
-          will give count of all the successful referrals while inner query gives the total referrals by a given uid
 - [x] Website parallax is gone. TBH the frontend code was scattering here and there, I had reorganized it a bit and I probably messed up doing that.
 - [x] Not receiving welcome mails. Hence could not check with referral system. I am using PHP's mail function, should work on a SMTP server (not on local unless configured)
 - [ ] Merge with poras_baatna and push.
