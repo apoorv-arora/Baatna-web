@@ -10,13 +10,13 @@ if(mysqli_connect_error()) { respond(true, "Couldn't connect to database.", mysq
 $stmt = $mysqli->prepare("SELECT uid, email FROM users WHERE token = ?");
 $stmt->bind_param('s', $token);
 $stmt->execute();
+if($stmt->affected_rows === 0) header("Location: index.html");
+
 $stmt->bind_result($uid, $referrerEmail);
 $stmt->fetch();
 $stmt->close();
 $mysqli->close();
 
-// query database to get details of the token
-$personDetails = ["uid" => $uid, "email" => $referrerEmail];
 ?>
 <!DOCTYPE html>
 <html ng-app="myApp">
@@ -97,7 +97,7 @@ $personDetails = ["uid" => $uid, "email" => $referrerEmail];
         <div class="row" data-scroll-speed="7">
           <div class=" columns medium-8">
             <div class="hero_desc">
-            <h2>Welcome <?php echo $personDetails['email'];?></h2>
+            <h2>Welcome <?php echo $referrerEmail;?></h2>
               <h2>Refer Baatna to your friends and colleagues</h2>
             </div>
             <div class='detail'>
@@ -159,7 +159,6 @@ $personDetails = ["uid" => $uid, "email" => $referrerEmail];
           <div class="large-9 columns">
             <div class="row right">
               <ul class="button-group footer_nav">
-
                 <li><a href="team.html" class="">Team</a></li>
                 <li><a href="#" class="">About Us</a></li>
                 <li><a href="#" class="">Terms</a></li>
@@ -175,5 +174,6 @@ $personDetails = ["uid" => $uid, "email" => $referrerEmail];
       <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.js"></script>
       <script src="js/refer.js"></script>
+      <script src="js/other.js"></script>
   </body>
 </html>
