@@ -19,7 +19,7 @@ else
 		{
 			if($value['PASSW']==$_POST['password'])
 			{
-				header('Location:welcome.php');
+				header('Location:nav.html');
 			}	
 			else
 			{
