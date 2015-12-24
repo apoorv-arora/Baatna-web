@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_session['baatna']))
+{
+  header('Location:login.html');
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

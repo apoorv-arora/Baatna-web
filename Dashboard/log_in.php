@@ -19,6 +19,8 @@ else
 		{
 			if($value['PASSW']==$_POST['password'])
 			{
+				session_start();
+				$_session['baatna']="sessionset";
 				header('Location:nav.html');
 			}	
 			else
