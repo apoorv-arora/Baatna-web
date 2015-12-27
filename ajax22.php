@@ -1,0 +1,37 @@
+<?php
+$t=$_GET['title'];
+$d=$_GET['description'];
+$tt=$_GET['required_for'];
+
+echo "title".$t." description".$d."  require_for".$tt;
+error_reporting(E_ALL);
+ini_set("display_errors", "1");
+require_once('Http2.php');
+$r = new HttpRequest("post", "http://52.76.14.6:8080/BaatnaServer/rest/wish/add", array(
+        "client_id" => 'bt_android_client',
+        "app_type" => 'bt_android',
+        "title" =>  $t,
+        "description" => $d,
+        "required_for" => $tt,
+        "access_token" => '60950314504451250'
+    ));
+  if ($r->hasError()) {
+      echo "sorry, an error occured";
+  } 
+  else {
+  	echo "entered";
+  	
+
+      // parse json and show tweets
+      $js = json_decode($r->getResponse());
+      //var_dump($js);
+      //print $js->{"response"};
+      	$res=$js->{"response"};
+      if($res=="success")
+      {
+      	echo "successful";
+        echo(json_encode(true));
+      }
+      
+  	  }
+?>
