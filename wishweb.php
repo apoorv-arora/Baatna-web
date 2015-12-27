@@ -49,7 +49,7 @@
               type:'get',
               dataType:'json',
               data:{
-                title:title
+                title:title,
                 description:desc,
                 required_for:time
                   },
