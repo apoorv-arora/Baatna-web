@@ -40,6 +40,7 @@
   jQuery(function($){
           $('#form').submit(function(e){
               e.preventDefault();  
+              $('.pp').empty();
               var title=$('#title').val();
               var desc=$('#desc').val();
               var time=$('#time').val();
@@ -48,13 +49,13 @@
               type:'get',
               dataType:'json',
               data:{
-                title:title,
+                title:title
                 description:desc,
                 required_for:time
                   },
              success:function(result) 
                 {
-                console.log("wish posted");                 
+                $('.pp').append('wish posted');                 
                 console.log("ajax passed");
                },
              error:function(){
