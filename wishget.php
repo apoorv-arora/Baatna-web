@@ -98,7 +98,7 @@
         $('.load_more').on('click',function(){
           console.log(e);
           console.log(s);
-          s=s+2;
+          s=s+5;
           if(e==1)
             $url="httprequestview.php";
           else
