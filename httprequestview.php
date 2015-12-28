@@ -1,8 +1,9 @@
 <?php
+$start=$_GET['start'];
 error_reporting(E_ALL);
 ini_set("display_errors", "1");
 require_once('Http2.php');
-$r = new HttpRequest("post", "http://52.76.14.6:8080/BaatnaServer/rest/wish/get?start=0&count=5&type=2&another_user=11", array(
+$r = new HttpRequest("post", "http://52.76.14.6:8080/BaatnaServer/rest/wish/get?start=$start&count=5&type=2&another_user=11", array(
         "access_token" => '60950314504451250'
     ));
   if ($r->getError()) {
