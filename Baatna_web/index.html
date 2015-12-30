@@ -1,391 +1,447 @@
-
-<!DOCTYPE>
-<html ng-app="myApp">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"> 
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png"> 
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png"> 
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png"> 
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png"> 
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png"> 
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png"> 
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png"> 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png"> 
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png"> 
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> 
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"> 
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> 
-    <link rel="manifest" href="/manifest.json"> 
-    <meta name="msapplication-TileColor" content="#ffffff"> 
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"> 
-    <meta name="theme-color" content="#ffffff"><link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"> 
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png"> 
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png"> 
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png"> 
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png"> 
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png"> 
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png"> 
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png"> 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png"> 
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png"> 
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> 
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"> 
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> 
-    <link rel="manifest" href="/manifest.json"> 
-    <meta name="msapplication-TileColor" content="#ffffff"> 
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"> 
-    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Baatna</title>
+    <title>Baatna.com</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <link href="assets/css/hallooou.css" rel="stylesheet">
+
+    <!-- Color stylesheet -->
+    <!-- <link href="assets/css/colors.css" rel="stylesheet"> -->
+    <!-- <link href="assets/css/colors_2.css" rel="stylesheet"> -->
+    <!-- <link href="assets/css/colors_3.css" rel="stylesheet"> -->
+    <!-- <link href="assets/css/colors_4.css" rel="stylesheet"> -->
+
+
+    <!-- Plugin stylesheets -->
+    <link href="assets/css/plugins/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/plugins/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/plugins/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/plugins/animate.css" rel="stylesheet">
+    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/plugins/jquery.mb.YTPlayer.min.css" rel="stylesheet">
+
+
+    <!-- Custom Fonts -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script>
+        document.createElement('video');
+      </script>
+    <![endif]-->
+
 </head>
 
-<body>
-
-    <header class="header" data-scroll-speed="3">
-        <div class="row">
-            <div class="large-3 columns">
-                <h1><a href="index1.html" class=""><img class="logo top_bar"src="images/baatna web-02.png"></a></h1></div>
-            <div class="large-9 columns">
-                <div class="row right">
-                    <ul class="button-group top_padd">
-                        <li><a href="#" data-tab='1' class="button">About</a></li>
-                        <li><a href="#" data-tab='2' class="button">Features</a></li>
-                        <li><a href="https://angel.co/baatna/jobs/" target="_blank" data-tab='3' class="button">Jobs</a></li>
-                        <li class="active"><a data-tab='4' href="#" class="button active sign_up">Sign Up</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </header>
-
-    <div class="outer_wrapper">
-        <div class="illustrations" data-scroll-speed="1">
-            <image src="images/home back-14 2.png"/>
-        </div>
-
-
-        <div class="intro">
-
-            <div class="phone_container right" data-scroll-speed="7">
-                <img class="demo_phone" src="images/baatna web-03.png">
-            </div>
-            <div class="row" data-scroll-speed="7">
-                <div class=" columns medium-8">
-                    <div class="hero_desc">
-                        <h2>Baatna lets you borrow things</h2>
-                        <h2>from people around you. Instantly</h2>
+<body id="home">
+            <!-- Navigation -->
+            <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header pull-left">
+                        <a class="navbar-brand page-scroll" href="#page-top">
+                            <!-- replace with your brand logo/text -->
+                            <span class="brand-logo"><img src="assets/images/baatna.jpg" width="100px" height="50px"onerror="this.src='assets/images/baatna.jpg'; this.onerror=null;" alt="Baatna" title="Baatna" class="img-responsive"></span>
+                        </a>
                     </div>
-                    <div class='detail'>
-                        <p>We are changing the way people consume things.
-                            <br>Join the community and start sharing.</p>
-
-                    </div>
-
-                    <div class="signup">
-                        <a href="#" data-tab='3'><button class="button active">Coming Soon</button></a>
-                    </div>
-                </div>
-                <div class="columns medium-4">
-                   
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="sect2" data-section="1" data-scroll-speed="7">
-        <div class="row">
-            <div class="text-center">
-                <h1>About</h1>
-            </div>
-            <ul class="small-block-grid-3">
-                <li id="about1" class="text-center">
-                    <div class="feature_image"><img src="images/how it works-11.png">
-                    </div>
-                    <p>Join the community and put up a
-                        <br> request for your need</p>
-
-                </li>
-                <li id="about2" class="text-center">
-                    <div class="feature_image"><img src="images/how it works-12.png">
-                    </div>
-                    <p>Conect and borrow from a peer 
-                        <br> who offers your request</p>
-
-                </li>
-                <li id="about3" class="text-center">
-                    <div class="feature_image"><img src="images/how it works-13.png">
-                    </div>
-                    <p>Share your goods with others 
-                        <br>and earn rewards</p>
-
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="sect3" data-section="2">
-        <div class="row">
-            <div class="text-center">
-                <h1>Features</h1>
-            </div>
-
-            <ul class="small-block-grid-4 " data-equalizer>
-                <li id="features1" class="text-center" data-equalizer-watch>
-                    <div class="feature_image-2"><img src="images/icons-05 2.png">
-                    </div>
-                    <p>Interact and share with only <br> verified users</p>
-
-                </li>
-                <li id="features2" class="text-center" data-equalizer-watch>
-                    <div class="feature_image-2"><img src="images/icons-06 2.png">
-                    </div>
-                    <p>Set up security amount<br>for expensive products</p>
-
-                </li>
-                <li id="features3" class="text-center" data-equalizer-watch>
-                    <div class="feature_image-2"><img src="images/icons-07 2.png">
-                    </div>
-                    <p>Earn coupons and offers on <br>each transaction</p>
-                </li>
-                <li id="features4" class="text-center highlight_link" data-equalizer-watch>
-                    <div class='show all_features'>
-                        <p><a class="toggle_ele"><span>view all features</span> <span class="spacer">&nbsp;&nbsp;&nbsp;></span></a></p>
-                    </div>
-
-                    <div class="hide all_features">
-                        <div class="feature_image-2"><img src="images/icons-08 2.png">
-                        </div>
-                        <p>Connect your social accounts <br> to add credibility</p>
-
-                    </div>
-                </li>
-            </ul>
-            <div class="hide second-feature-section">
-                <ul class="small-block-grid-4 ">
-                    <li class="text-center">
-                        &nbsp;
-                    </li>
-                    <li id="features5" class="text-center">
-                        <div class="feature_image-2"><img src="images/icons-09 2.png">
-                        </div>
-                        <p>Pickup and Delivery <br> on demand</p>
-
-                    </li>
-                    <li id="features6" class="text-center">
-                        <div class="feature_image-2"><img src="images/icons-10 2.png">
-                        </div>
-                        <p>Reminder and updates <br> about the status</p>
-                    </li>
-
-                    <li class="text-center">
-                        &nbsp;
-                    </li>
-
-
-                </ul>
-            </div>
-
-        </div>
-    </div>
-
-    
-    <div class="sect4 text-center" data-section="4">
-        <div class="row">
-            <div class="columns medium-12">
-                <h1>Be the first to try it out</h1>
-                <p id="sign-up2">Get a verified pioneer badge on your profile and refer your friends <br> to recieve exclusive Baatna merchandise </p>
-
-            </div>
-            <form>
-                <div class="row">
-                    <div class="columns medium-centered medium-6">
-                        <div class="large-12 columns">
-                            <div class="row collapse postfix-radius">
-                                <div class="signup_last">
-                                    <form class="form-style-1" action="poras.php" method="post">
-                                        <div class="small-7 columns">
-                                            <input type="email" placeholder="your email id" id="signupemail" name="signupemail" required="true">
-                                        </div>
-                                        <div class="small-5 columns">
-                                            <input type="submit" id="signupsubmit" value="Sign Up for the preview" class="button postfix" data-reveal-id="" />
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                    <div class="main-nav pull-right">
+                        <div class="button_container toggle">
+                            <span class="top"></span>
+                            <span class="middle"></span>
+                            <span class="bottom"></span>
                         </div>
                     </div>
+                    <div class="overlay" id="overlay">
+                        <nav class="overlay-menu">
+                            <ul>
+                                 <li><a href="crowdfunding.html">Crowd Funding</a></li>
+                                <li><a href="#about">About us</a></li>
+                                <li><a href="#services">How does it work?</a></li>
+                                <li><a href="#products">Why Baatna is Awesome</a></li>
+                                <li><a href="team.html#team">Our Team</a></li>
+                                <li><a href="#clients">Careers</a></li>
+                                <li><a href="#contact">Contact us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div><!-- /.container -->
+            </nav>
+
+
+
+            <!-- Intro Header -->
+            <!-- Full Page Image Background Carousel Header -->
+            <header id="intro-carousel" class="carousel slide"  style="background-image:url('assets/images/web_bg.png'); background-size:auto 100%;">
+                <!-- Optional Indicators -->
+                <!-- <ol class="carousel-indicators">
+                        <li data-target="#intro-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#intro-carousel" data-slide-to="1"></li>
+                        <li data-target="#intro-carousel" data-slide-to="2"></li>
+                    </ol> -->
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" >
+                    <div class="item active" >
+                        <!-- Set the first background image using inline CSS below. -->
+                        <div class="fill" ></div>
+                        <div class="carousel-caption">
+                            <h1 class="wow animated slideInDown">Baatna</h1>
+                            <h4 class="intro-text wow animated slideInUp">Borrow things from your neighbourhood, instantly!<br>Join our community..
+                                <br>Start Sharing</h4>
+                            <a href="#about" class="btn btn-default btn-lg">Know more About us</a>
+                        </div>
+                        <div class="overlay-detail"></div>
+                    </div><!-- /.item -->
+
+                    <div class="item">
+                        <!-- Set the second background image using inline CSS below. -->
+                       <div class="fill" ></div>
+                        <div class="carousel-caption">
+                            <h1 class="wow animated slideInDown">Crowdfunding</h1>
+                            <p class="intro-text wow animated slideInUp">We are a community of the people,<br>better be funded by the people.
+                                <br>Be a part of the revolution in P2P sharing space.</p>
+                            <a href="crowdfunding.html#funding" class="btn btn-default btn-lg"> Go to Crowd funding</a>
+                        </div>
+                        <div class="overlay-detail"></div>
+                    </div><!-- /.item -->
+
+                    <div class="item">
+                        <!-- Set the second background image using inline CSS below. -->
+                        <div class="fill"></div>
+                        <div class="carousel-caption">
+                            <h1 class="wow animated slideInDown">Join Us!</h1>
+                            <p class="intro-text wow animated slideInUp">Baatna lets you borrow things from<br>your neighbourhood instantly!</p>
+                            <a href="https://play.google.com/store/apps/developer?id=Baatna"><img src="assets/images/google-icon.png" width="20%" height=></a>
+                        </div>
+                        <div class="overlay-detail"></div>
+                    </div><!-- /.item -->
+
                 </div>
-            </form>
-            <div class="referals">
-                <p>Referals coming Soon!</p>
-            </div>
-        </div>
-    </div>
-
-    <!---
-
-    <div id="Confirm_pop" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-        <h2 id="modalTitle">Thanks for signing up for the preview</h2>
-        <p class="lead">Check your mail for more details!</p>
-        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    </div>  
-
-    ---->
-
-     <script type="text/javascript">
-    $('#signupsubmit').click(function()
-    {
-        $.ajax({
-            url: 'signup.php',
-            type:'POST',
-            data:
-            {
-                Email: $("#signupemail").value
-            },
-            success: function()
-            {
+                <!-- Controls -->
+                <a class="left carousel-control squared" href="#intro-carousel" data-slide="prev">
+                    <i class="fa fa-angle-left fa-2x"></i>
+                </a>
+                <a class="right carousel-control squared" href="#intro-carousel" data-slide="next">
+                    <i class="fa fa-angle-right fa-2x"></i>
+                </a>
                 
-            }               
-        });
-    });
-    </script>
+            </header>
 
 
-    <div id="form_pop" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-        <h2 id="modalTitle">Would love to hear from you!</h2>
-        <p class="lead">We hang out in Delhi Currently</p>
-        <p>Tweet at us for a quick reply @baatnacommunity <br>or <br>Fill out the form below and we'll be in touch: </p>
-        <form class="form-style-4" action="" method="post">
-            <label for="field1">
-            <span>Enter Your Name</span><input type="text" id="name" name="name" required="true" />
-            </label>
-            <label for="field2">
-            <span>Email Address</span><input type="email" id="email" name="email" required="true" />
-            </label>
-            <label for="field3">
-            <span>Short Subject</span><input type="text" id="subject" name="subject" required="true" />
-            </label>
-            <label for="field4">
-            <span>Message to Us</span><textarea name="message" id="message" onkeyup="adjust_textarea(this)" required="true"></textarea>
-            </label>
-            <label>
-            <span>&nbsp;</span><input type="submit" value="Send Letter" id="submit" />
-            </label>
-        </form>
-        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    </div>
 
-    <script type="text/javascript">
-    $('#submit').click(function()
-    {
-        $.ajax({
-            url: 'contact.php',
-            type:'POST',
-            data:
-            {
-                Name: $("#name").value,
-                Email: $("#email").value,
-                Subject: $("#subject").value,
-                Message: $("#message").value
-            },
-            success: function()
-            {
-                $("#form_pop").hide();
-            }               
-        });
-    });
-    </script>
+            <!-- About Section -->
+            <section id="about" class="about content-section alt-bg-light wow fadeInUp" data-wow-offset="10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Enabling Instant Sharing</h2>
+                            <h3 class="caption gray">80% of your household products are underutilized!</h3>
+                            <p>We are an online community providing a platform where users can post every possible need / requirement. It is a peer-to-peer request network / on demand mobile platform where any need to borrow anything from others can be easily and quickly fulfilled. </p>
+
+                            <blockquote>
+                                The miracle is this: The more we share the more we have.
+                                <span>Leonard Nimoy</span>
+                            </blockquote>
+
+                            <p>Broadcast your need to the whole Baatna community in an instant. Chat, borrow, and unravel the possibilities in sharing space. </p>
+
+                        </div><!-- /.col-md-6 -->
+                        
+                        <div class="col-md-6">
+                            <!-- Display image -->
+                            <img src="assets/images/about_image.jpeg" class="img-responsive">
+                            <!-- Optional video embed code -->
+                            
+                        </div><!-- /.col-md-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.section -->
 
 
-    <footer>
-        <div class="row">
-            <div class="large-3 columns">
-                <h1><img class="logo_alt"src="images/baatna web-12.png"></h1></div>
-            <div class="large-9 columns">
-                <div class="row right">
-                    <ul class="button-group footer_nav">
-                      
-                        <li><a href="team.html" class="">Team</a></li>
-                        <li><a href="#" class="">About Us</a></li>
-                        <li><a href="#" class="">Terms</a></li>
-                        <li><a href="#" class="">Privacy</a></li>
-                        <li class="active"><a href="#" data-reveal-id="form_pop">Contact</a></li>
-                    </ul>
+
+            <!-- Services Section -->
+            <section id="services" class="services content-section">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h2>How Does it Work?</h2>
+                            <h3 class="caption gray">We are changing the way people consumes thing. Joim our community and start sharing</h3>
+                        </div><!-- /.col-md-12 -->
+
+                        <div class="container">
+                            <div class="row text-center">
+                                <div class="col-md-4">
+                                    <div class="row services-item text-center wow flipInX" data-wow-offset="10">
+                                         <img src="assets/images/1.svg">
+                                        <h4>Join Us</h4>
+                                        <p>Join the community and put up a request for your need.</p>
+                                    </div><!-- /.row -->
+                                </div><!-- /.col-md-4 -->
+
+                                <div class="col-md-4">
+                                    <div class="row services-item text-center wow flipInX" data-wow-offset="10">
+                                        <img src="assets/images/2.svg" height="85%" width="85%">
+                                        
+                                        <h4>Connect</h4>
+                                        <p>Connect and borrow from a peer who offers your request.</p>
+                                    </div><!-- /.row -->
+                                </div><!-- /.col-md-4 -->
+
+                                <div class="col-md-4">
+                                    <div class="row services-item text-center wow flipInX" data-wow-offset="10">
+                                         <img src="assets/images/3.svg" height="75%" width="75%">
+                                        <h4>Share and win</h4>
+                                        <p>Share your product with others and earn a chance to win exciting rewards. </p>
+                                    </div><!-- /.row -->
+                                </div><!-- /.col-md-4 -->
+
+                            </div><!-- /.row -->
+                        </div><!-- /.container -->
+
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.section -->
+
+
+
+            <!-- Products Section -->
+            <section id="products" class="products content-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="assets/images/app3.png" class="center-block img-responsive feature_image">
+                        </div><!-- /.col-md-4 -->
+
+                        <div class="col-md-8">
+                            <div class="products-container">
+
+                                <div class="col-md-12">
+                                    <h2>Why Baatna is awesome?</h2>
+                                    <h3 class="caption white">We are thriving towards building new and efficient feature which makes borrowing the easiest job on cellphone.</h3>
+                                </div><!-- /.col-md-12 -->
+
+                                <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                                    <div class="media-left">
+                                        <span class="icon"><i class="fa fa-check fa-3x"></i></span>
+                                    </div><!-- /.media-left -->
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Verified Users</h3>
+                                        <p>Interact and share with only verified users of your local ambassdor.</p>
+                                    </div><!-- /.media-body -->
+                                </div><!-- /.col-md-6 -->
+
+                                <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                                    <div class="media-left">
+                                        <span class="icon"><i class="fa fa-lock fa-3x"></i></span>
+                                    </div><!-- /.media-left -->
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Secure your products</h3>
+                                        <p>Set up security amount for expensive products with 100% refund.</p>
+                                    </div><!-- /.media-body -->
+                                </div><!-- /.col-md-6 -->
+
+                                <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                                    <div class="media-left">
+                                        <span class="icon"><i class="fa fa-rocket fa-3x"></i></span>
+                                    </div><!-- /.media-left -->
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Baatna fulfillment</h3>
+                                        <p>Browse through a range of products offered directly by Baatna.</p>
+                                    </div><!-- /.media-body -->
+                                </div><!-- /.col-md-6 -->
+
+                                <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                                    <div class="media-left">
+                                        <span class="icon"><i class="fa fa-facebook-square fa-3x"></i></span>
+                                    </div><!-- /.media-left -->
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Social connectivity</h3>
+                                        <p>Connect your social accounts to add credibility.</p>
+                                    </div><!-- /.media-body -->
+                                </div><!-- /.col-md-6 -->
+
+                                <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                                    <div class="media-left">
+                                        <span class="icon"><i class="fa fa-truck fa-3x"></i></span>
+                                    </div><!-- /.media-left -->
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Logistics</h3>
+                                        <p>Pickup and Delivery on demand.</p>
+                                    </div><!-- /.media-body -->
+                                </div><!-- /.col-md-6 -->
+
+                                <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                                    <div class="media-left">
+                                        <span class="icon"><i class="fa fa-envelope-o fa-3x"></i></span>
+                                    </div><!-- /.media-left -->
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Reminders</h3>
+                                        <p>Reminder and updates about the status.</p>
+                                    </div><!-- /.media-body -->
+                                </div><!-- /.col-md-6 -->
+
+                            </div><!-- /.products-container -->
+                        </div><!-- /.col-md-8 -->
+
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.products -->
+
+
+          
+
+
+           
+
+
+           
+
+
+          
+
+           
+
+
+
+           
+            <!-- Contact section -->
+            <section id="contact" class="contact content-section no-bottom-pad wow fadeIn" data-wow-offset="10">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h2>Contact</h2>
+                            <h3 class="caption gray">Feel free to get in touch with us if you want to share something or simply buy us a cofee.</h3>
+                        </div><!-- /.col-md-12 -->
+
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+
+                <div class="container">
+                    <div class="row form-container">
+
+                        <div class="col-md-8 contact-form">
+                            <h3>Drop us a line</h3>
+                            <form class="ajax-form" id="contactForm" method="post" action="assets/php/contact.php">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name..." value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your email..." value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="phone" class="form-control" id="phone" name="phone" placeholder="Your phone..." value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="4" name="message" placeholder="Your message..." required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" name="submit" class="btn btn-default"><i class="fa fa-paper-plane fa-fw"></i> Send</button>
+                                </div>
+                            </form>
+                        </div><!-- /.contact-form -->
+
+                        <div class="col-md-4 contact-address">
+                            <h3>Our address</h3>
+                            <p><i class="fa fa-map-marker fa-fw"></i> Hatch 101, 1st floor,49,Block-B
+                                <br />Mohan CooperativeIndustrial Estate,
+                                <br /> Badarpur,New Delhi-110076</p>
+                            <ul>
+                                <li><i class="fa fa-envelope fa-fw"></i>hello@baatna.com</li>
+                                <li><i class="fa fa-phone fa-fw"></i>+91-9818392472</li>
+                            </ul>
+                        </div><!-- /.contact-address -->
+
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+
+               
+            
+            <!-- Footer -->
+            <footer>
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-12 segment" align="center">
+                            <a href="http://baatna.com" title="baatna">
+                                <h2>
+                                    <!-- replace with your brand logo/text -->
+                                    <img src="assets/images/baatna_image.png" width="15%" height="15%" onerror="this.src='assets/images/baatna_image.png'; this.onerror=null;" alt="baatna" title="baatna" class="img-responsive">
+                                </h2>
+                            </a>
+                            <p class="white">Our website uses delicious cookies to improve your experience. We'll assume you're ok with that.</p>
+                        </div><!-- /.col-md-12 -->
+                    </div><!-- /.row -->
+
+                    <div class="row text-center">
+                        <div class="col-md-12 social segment">
+                            <h4>Stay Connected</h4>
+                            <a href="https://www.facebook.com/baatna/?fref=ts"><i class="fa fa-facebook fa-3x"></i></a>
+                            <a href="https://twitter.com/BaatnaCommunity"><i class="fa fa-twitter fa-3x"></i></a>
+                            <a href="https://www.linkedin.com/company/6446429?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A6446429%2Cidx%3A1-1-1%2CtarId%3A1450960004764%2Ctas%3Abaatna"><i class="fa fa-linkedin fa-3x"></i></a>
+                        </div><!-- /.col-md-12 -->
+                    </div><!-- /.row -->
+
+                </div><!-- /.container -->
+
+                <div class="copynote">
+                    <div class="container">
+                        <div class="row">
+                             <div class="col-md-2 text-right">
+                                <a href="privacy.html">Privacy policy</a>
+                            </div><!-- /.col-md-12 -->
+                            <div class="col-md-8 text-center">
+                                &copy; 2015. Baatna. All rights reserved.
+                            </div><!-- /.col-md-12 -->
+                            <div class="col-md-2 text-left">
+                               <a href="terms.html"> Terms &amp; conditions</a>
+                            </div><!-- /.col-md-12 -->
+                           
+
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!-- /.copynote -->
+
+                <div class="nav pull-right scroll-top">
+                    <a href="#home" title="Scroll to top"><i class="fa fa-angle-up"></i></a>
                 </div>
 
-            </div>
-        </div>
-    </footer>
+            </footer><!-- /.footer -->
 
 
 
-    <script type="text/javascript" src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
-    <script TYPE="text/javascript">
-        //auto expand textarea
-        function adjust_textarea(h) {
-            h.style.height = "20px";
-            h.style.height = (h.scrollHeight)+"px";
-        }
-    </script>
+    <!-- jQuery -->
+    <script src="assets/js/jquery.min.js"></script>
 
-    <script type="text/javascript">
-        $(function(){
-            var boxes = $('[data-scroll-speed]'),
-            $window = $(window);
-            $window.on('scroll', function(){
-                var scrollTop = $window.scrollTop();
-                boxes.each(function(){
-                  var $this = $(this),
-                      scrollspeed = parseInt($this.data('scroll-speed')),
-                      val = - scrollTop / scrollspeed;
-                  $this.css('transform', 'translateY(' + val + 'px)');
-                });
-              });
-            })
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/js/bootstrap.min.js"></script>
 
-    </script>
+    <!-- Plugin JavaScript -->
+    <script src="assets/js/plugins/wow.min.js"></script>
+    <script src="assets/js/plugins/owl.carousel.min.js"></script>
+    <script src="assets/js/plugins/jquery.parallax-1.1.3.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.mb.YTPlayer.min.js"></script>
+    <script src="assets/js/plugins/jquery.countTo.js"></script>
+    <script src="assets/js/plugins/jquery.inview.min.js"></script>
+    <script src="assets/js/plugins/pace.min.js"></script>
+    <script src="assets/js/plugins/jquery.easing.min.js"></script>
+    <script src="assets/js/plugins/jquery.validate.min.js"></script>
+    <script src="assets/js/plugins/additional-methods.min.js"></script> 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoVKfEihX__NdMwdDysA6Vve6PE9Ierj4"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.js"></script>
-    <script type="text/javascript">
-        $(document).foundation();
-
-        $(document).ready(function() {
-
-            $(".toggle_ele").click(function() {
-
-                $(".all_features").eq(0).removeClass("show").addClass("hide");
-                $(".all_features").eq(1).removeClass("hide").addClass("show");
-
-                $(".second-feature-section").removeClass("hide");
-
-
-            });
-
-            $(".header a.button").click(function(e) {
-                e.preventDefault();
-
-                var t = $(this).data("tab");
-                console.log(t);
-
-                $('html, body').animate({
-                    scrollTop: $("[data-section=" + t + "]").offset().top - 30
-                }, 300);
-
-            });
-
-
-
-        });
-    </script>
+    <!-- Custom JavaScript -->
+    <script src="assets/js/hallooou.js"></script>
 </body>
 
 </html>
