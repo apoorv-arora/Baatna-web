@@ -93,7 +93,7 @@ Version: 1.0
   right: 100%;
   width: 100%;
   height: 10px;
-  background: #2DFEA4; /* Primary color, can be changed via colors.css */
+  background: #0ED7A3; /* Primary color, can be changed via colors.css */
   pointer-events: none;
 }
 
@@ -167,7 +167,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #2DFEA4; /* Primary color, can be changed via colors.css */
+    color: #0ED7A3; /* Primary color, can be changed via colors.css */
 }
 
 
@@ -215,7 +215,7 @@ a:focus {
 
 .highlight{
     font-weight: 700;
-    color: #2DFEA4; /* Primary color, can be changed via colors.css */
+    color: #0ED7A3; /* Primary color, can be changed via colors.css */
 }
 
 .list-ord{
@@ -284,8 +284,8 @@ blockquote {
     font-size: 18px;
     position: relative; 
     padding-left: 90px;
-    color: #2DFEA4;
-    border-color: #2DFEA4;
+    color: #0ED7A3;
+    border-color: #0ED7A3;
 }
  
 blockquote:before {
@@ -355,7 +355,7 @@ blockquote span{
 }
 
 .navbar-custom a {
-    color: #2DFEA4; /* Primary color, can be changed via colors.css */
+    color: #0ED7A3; /* Primary color, can be changed via colors.css */
 }
 
 .navbar-custom .nav li a {
@@ -425,7 +425,7 @@ blockquote span{
 }
 
 .button_container span {
-    background:#2DFEA4 ;
+    background:#0ED7A3 ;
     border: none;
     height: 4px;
     width: 100%;
@@ -449,7 +449,7 @@ blockquote span{
 .overlay {
     position: fixed;
     display: block; 
-    background: #2DFEA4; /* Primary color, can be changed via colors.css */
+    background: #0ED7A3; /* Primary color, can be changed via colors.css */
     top: 0;
     border: 0;
     right:0;
@@ -597,7 +597,7 @@ blockquote span{
 
 .carousel-control.left:hover,
 .carousel-control.right:hover{
-    background: #2DFEA4; /* Primary color, can be changed via colors.css */
+    background: #0ED7A3; /* Primary color, can be changed via colors.css */
 }
 
 #parallax-slide{
@@ -769,7 +769,7 @@ video {
     right: 0;
     border-width: 0 30px 30px 0;
     border-style: solid;
-    border-color: #fff #fff #2DFEA4 #2DFEA4; /* Primary color, can be changed via colors.css */
+    border-color: #fff #fff #0ED7A3 #0ED7A3; /* Primary color, can be changed via colors.css */
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.2);
        -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.2);
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -817,7 +817,7 @@ video {
 
 
 .services-item i{
-    color: #2DFEA4; /* Primary color, can be changed via colors.css */
+    color: #0ED7A3; /* Primary color, can be changed via colors.css */
     padding: 0;
     margin: 0 0 10px 0;
      -webkit-transition: all .2s ease-in-out;
@@ -826,7 +826,7 @@ video {
 }
 
 .services-item:hover{
-    background:#2DFEA4;
+    background:#0ED7A3;
     opacity:0.7; /* Primary color, can be changed via colors.css */
      -webkit-transition: background .2s ease-in-out;
         -moz-transition: background .2s ease-in-out;
@@ -901,7 +901,7 @@ video {
     margin: 0 0 22px 0;
     min-width: 80px;
     color: #fff;
-    background: #2DFEA4; /* Primary color, can be changed via colors.css */
+    background: #0ED7A3; /* Primary color, can be changed via colors.css */
     text-align: center;
     border-radius: 50px;
     width: 80px;
@@ -995,7 +995,7 @@ video {
 .team-member figure:hover figcaption{
     visibility: visible;
     color: #fff;
-    background: #2DFEA4; /* Primary color, can be changed via colors.css */
+    background: #0ED7A3; /* Primary color, can be changed via colors.css */
     height: 100%;
     -webkit-transition: all 0.3s ease-in-out;
        -moz-transition: all 0.3s ease-in-out;
@@ -1098,7 +1098,7 @@ ul.project-meta li a:hover{
     line-height: 18px;
     font-size: 18px;
     text-transform: capitalize;
-    background: #2DFEA4; /* Primary color, can be changed via colors.css */
+    background: #0ED7A3; /* Primary color, can be changed via colors.css */
 }
 .full-project:hover {
     background: rgba(223,81,76, 1); /* Hover color, can be changed via colors.css */
@@ -1208,7 +1208,7 @@ ul.project-meta{
 
 .project-navigation a:hover {
     width: 60px;
-    background: #2DFEA4; /* Primary color, can be changed via colors.css */
+    background: #0ED7A3; /* Primary color, can be changed via colors.css */
 }
 
 .project-container:hover .project-navigation .btn-prev,
@@ -1376,7 +1376,7 @@ ul.project-meta{
   width: 32px;
   cursor: pointer;
   margin-left: 10px;
-  background-color: #2DFEA4; /* Primary color, can be changed via colors.css */
+  background-color: #0ED7A3; /* Primary color, can be changed via colors.css */
   background-repeat: no-repeat;
   background-size: 32px 64px;
   background-image: url("../images/cd-icon-controller.svg");
@@ -1430,7 +1430,7 @@ span.count-description {
 }
 
 .counter-section .alternate{
-   background-color: #2DFEA4;
+   background-color: #0ED7A3;
 }
 
 
@@ -1448,7 +1448,7 @@ span.count-description {
     width: 100%;
     margin:0;
     padding: 50px 0;
-    background: #2DFEA4; /* Primary color, can be changed via colors.css */
+    background: #0ED7A3; /* Primary color, can be changed via colors.css */
     -webkit-box-shadow: 0 0 10px 2px rgba(0,0,0,.1);
        -moz-box-shadow: 0 0 10px 2px rgba(0,0,0,.1);
             box-shadow: 0 0 10px 2px rgba(0,0,0,.1);
@@ -1490,7 +1490,7 @@ span.count-description {
     text-align: center;
     line-height: 1.5;
     background-color: #fff;
-    border: 2px solid #2DFEA4; /* Primary color, can be changed via colors.css */
+    border: 2px solid #0ED7A3; /* Primary color, can be changed via colors.css */
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
@@ -1504,7 +1504,7 @@ span.count-description {
     right: 80px;
     top: 100%;
     border: 15px solid;
-    border-color: #2DFEA4 transparent transparent #2DFEA4; /* Primary color, can be changed via colors.css */
+    border-color: #0ED7A3 transparent transparent #0ED7A3; /* Primary color, can be changed via colors.css */
 }
 
 .testimonials p.speech:after{
@@ -1523,7 +1523,7 @@ span.count-description {
 }
 
 .client-info h4{
-    color: #2DFEA4; /* Primary color, can be changed via colors.css */
+    color: #0ED7A3; /* Primary color, can be changed via colors.css */
     margin: 10px 0 0 0;
     padding: 0;
 }
@@ -1590,18 +1590,27 @@ footer ul.twitter-entries li span{
 }
 
 footer .copynote{
-    padding: 0;
-    margin-top:0;
+    padding: 10px;
+    margin-top:-3px;
     background:rgba(54, 53, 54, 1); /* Dark color/Footer color, can be changed via colors.css */
 }
 
 footer .segment{
     padding-bottom: 0px;
 }
+footer .segment h2{
+    margin:0 0 0 0;
+}
 
 footer .social a{
     display: inline-block;
-    padding: 0px;
+    padding: 5px;
+}
+footer .copynote{
+    font-size:10px;
+}
+footer .fa-3x{
+    font-size:2em;
 }
 
 .scroll-top {
@@ -1617,8 +1626,8 @@ footer .social a{
     display: inline-block;
     padding: 5px 15px;
     color: #fff;
-    border: 1px solid #2DFEA4;
-    background: #2DFEA4; /* Primary color, can be changed via colors.css */
+    border: 1px solid #0ED7A3;
+    background: #0ED7A3; /* Primary color, can be changed via colors.css */
     font-size: 30px;
 }
 
@@ -1626,7 +1635,7 @@ footer .social a{
     border: 1px solid #fff; /* Hover border color, can be changed via colors.css */
     outline: 0;
     color: #fff;
-    background: #df514c; /* Hover color, can be changed via colors.css */
+    background: #0ED7A3; /* Hover color, can be changed via colors.css */
 }
 
 
@@ -1705,8 +1714,13 @@ footer .social a{
 
 .btn-default {
     color: #fff;
-    border: 1px solid #2DFEA4; /* Primary color, can be changed via colors.css */
-    background: #2DFEA4; /* Primary color, can be changed via colors.css */
+    border: 1px solid #0ED7A3; /* Primary color, can be changed via colors.css */
+    background: #0ED7A3; /* Primary color, can be changed via colors.css */
+}
+.btn-responsive {
+   width: 80%;
+    white-space: normal !important;
+    word-wrap: break-word;
 }
 
 
@@ -1717,7 +1731,7 @@ footer .social a{
     border: 1px solid #fff; /* Hover border color, can be changed via colors.css */
     outline: 0;
     color: #fff;
-    background: #df514c; /* Hover color, can be changed via colors.css */
+    background: #0ED7A3; /* Hover color, can be changed via colors.css */
 }
 
 
@@ -1738,7 +1752,7 @@ footer .social a{
 .btn-overcolor{
     border: 1px solid rgba(255, 255, 255, 1);
     color: #fff;
-    background: #2DFEA4; /* Primary color, can be changed via colors.css */
+    background: #0ED7A3; /* Primary color, can be changed via colors.css */
 }
 
 
@@ -1757,7 +1771,8 @@ footer .social a{
 .squared {
     padding: 10px;
     width: 60px;
-    height: 60px; 
+    height: 60px;
+    background-color: white !important; 
 }
 
 
@@ -1826,7 +1841,7 @@ footer .social a{
     }
 
     .navbar-custom.top-nav-collapse .button_container span{
-        background: #2DFEA4;
+        background: #0ED7A3;
     }
 
     .navbar-custom.top-nav-collapse .button_container.active span.top,
@@ -1884,7 +1899,7 @@ footer .social a{
     }
 
      .navbar-custom a{
-        color: #2DFEA4;
+        color: #0ED7A3;
         color: #fff;
     }
 
@@ -1895,7 +1910,7 @@ footer .social a{
 
     .button_container span,
     .button_container span {
-        background: #2DFEA4;
+        background: #0ED7A3;
     }
 
     .button_container.active span.top,
@@ -1996,7 +2011,7 @@ footer .social a{
 
 @media(max-width:1199px) {
    .navbar-custom .button_container span {
-        background: #2DFEA4;
+        background: #0ED7A3;
     }
 
 }
@@ -2009,14 +2024,14 @@ footer .social a{
 ::-moz-selection {
     text-shadow: none;
     background: #fcfcfc;
-    color: red;
-    background: #2DFEA4;
+    color: #0ED7A3;
+    background:#0ED7A3;
 }
 
 ::selection {
     text-shadow: none;
     background: #fcfcfc;
-    color: red;
+    color: #0ED7A3;
     background: white;
 }
 
@@ -2029,7 +2044,7 @@ img::-moz-selection {
 }
 
 body {
-    webkit-tap-highlight-color: #2DFEA4;
+    webkit-tap-highlight-color:#0ED7A3;
 }
 
 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Baatna.com</title>
+    <title>Baatna</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -44,6 +44,9 @@
         document.createElement('video');
       </script>
     <![endif]-->
+    
+
+    <link rel='icon' href='assets/images/favicon.ico' type='image/x-icon'/ >
 
 </head>
 
@@ -84,7 +87,7 @@
 
             <!-- Intro Header -->
             <!-- Full Page Image Background Carousel Header -->
-            <header id="intro-carousel" class="carousel slide"  style="background-image:url('assets/images/web_bg.png'); background-size:auto 100%;">
+            <header id="intro-carousel" class="carousel slide" data-ride="carousel" style="background-image:url('assets/images/web_bg.png'); background-size:auto 100%;">
                 <!-- Optional Indicators -->
                 <!-- <ol class="carousel-indicators">
                         <li data-target="#intro-carousel" data-slide-to="0" class="active"></li>
@@ -98,8 +101,8 @@
                         <div class="fill" ></div>
                         <div class="carousel-caption">
                             <h1 class="wow animated slideInDown">Baatna</h1>
-                            <h4 class="intro-text wow animated slideInUp">Borrow things from your neighbourhood, instantly!<br>Join our community..
-                                <br>Start Sharing</h4>
+                            <p class="intro-text wow animated slideInUp">Borrow things from your neighbourhood, instantly!<br>Join our community..
+                                <br>Start Sharing</p>
                             <a href="#about" class="btn btn-default btn-lg">Know more About us</a>
                         </div>
                         <div class="overlay-detail"></div>
@@ -112,7 +115,7 @@
                             <h1 class="wow animated slideInDown">Crowdfunding</h1>
                             <p class="intro-text wow animated slideInUp">We are a community of the people,<br>better be funded by the people.
                                 <br>Be a part of the revolution in P2P sharing space.</p>
-                            <a href="crowdfunding.html#funding" class="btn btn-default btn-lg"> Go to Crowd funding</a>
+                            <a target="_blank" href="crowdfunding.html#funding" class="btn btn-default btn-lg"> Go to Crowd funding</a>
                         </div>
                         <div class="overlay-detail"></div>
                     </div><!-- /.item -->
@@ -123,7 +126,7 @@
                         <div class="carousel-caption">
                             <h1 class="wow animated slideInDown">Join Us!</h1>
                             <p class="intro-text wow animated slideInUp">Baatna lets you borrow things from<br>your neighbourhood instantly!</p>
-                            <a href="https://play.google.com/store/apps/developer?id=Baatna"><img src="assets/images/google-icon.png" width="20%" height=></a>
+                            <a  target="_blank" href="https://play.google.com/store/apps/developer?id=Baatna"><img src="assets/images/google-icon.png" width="20%" height=></a>
                         </div>
                         <div class="overlay-detail"></div>
                     </div><!-- /.item -->
@@ -161,7 +164,7 @@
                         
                         <div class="col-md-6">
                             <!-- Display image -->
-                            <img src="assets/images/about_image.jpeg" class="img-responsive">
+                            <img src="assets/images/facebook cover1.png" class="img-responsive text-center" align="middle">
                             <!-- Optional video embed code -->
                             
                         </div><!-- /.col-md-6 -->
@@ -177,7 +180,7 @@
                     <div class="row text-center">
                         <div class="col-md-12">
                             <h2>How Does it Work?</h2>
-                            <h3 class="caption gray">We are changing the way people consumes thing. Joim our community and start sharing</h3>
+                            <p class="caption gray">We are changing the way people consumes thing. Join our community and start sharing</p>
                         </div><!-- /.col-md-12 -->
 
                         <div class="container">
@@ -221,7 +224,29 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="assets/images/app3.png" class="center-block img-responsive feature_image">
+                           <div id="screens" class="carousel slide" data-ride="carousel">
+                                 <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="assets/images/app1.png" class="center-block img-responsive feature_image">
+                                     </div>
+
+                                     <div class="item">
+                                         <img src="assets/images/app2.png" class="center-block img-responsive feature_image">
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="assets/images/app4.png" class="center-block img-responsive feature_image">
+                                     </div>
+                                    <div class="item">
+                                        <img src="assets/images/app5.png" class="center-block img-responsive feature_image">
+                                     </div>
+
+                                    <div class="item">
+                                         <img src="assets/images/app3.png" class="center-block img-responsive feature_image">
+                                     </div>
+                                 </div>
+
+                            </div>
                         </div><!-- /.col-md-4 -->
 
                         <div class="col-md-8">
@@ -322,7 +347,7 @@
                     <div class="row text-center">
                         <div class="col-md-12">
                             <h2>Contact</h2>
-                            <h3 class="caption gray">Feel free to get in touch with us if you want to share something or simply buy us a cofee.</h3>
+                            <p class="caption gray">Feel free to get in touch with us if you want to share something or simply buy us a cofee.</p>
                         </div><!-- /.col-md-12 -->
 
                     </div><!-- /.row -->
@@ -425,6 +450,23 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/js/bootstrap.min.js"></script>
+     <script>
+    var $ = jQuery.noConflict();
+        $(document).ready(function() {
+            $('#intro-carousel').carousel({
+            interval: 10000,cycle:true
+          })
+        });
+</script>
+ <script>
+    var $ = jQuery.noConflict();
+        $(document).ready(function() {
+            $('#screens').carousel({
+            interval: 1000,cycle:true
+          })
+        });
+</script>
+
 
     <!-- Plugin JavaScript -->
     <script src="assets/js/plugins/wow.min.js"></script>
@@ -442,6 +484,7 @@
 
     <!-- Custom JavaScript -->
     <script src="assets/js/hallooou.js"></script>
+   
 </body>
 
 </html>
