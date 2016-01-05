@@ -123,8 +123,13 @@ body {
         color:black;
         text-align:center;
     }
-    .caption1{
+.caption1{
         font-size:14px;
+        font-weight:500;
+        color:black;
+    }
+.question{
+        font-size:16px;
         font-weight:500;
         color:black;
     }
@@ -967,6 +972,7 @@ video {
 .team-member figcaption ul li{
     display: inline-block;
     padding:10px;
+    opacity:1.0 !important;
 }
 
 .team-member h4{
@@ -984,6 +990,7 @@ video {
     left: 0;
     width: 100%;
     height: 0;
+    opacity: 0.5 !important;
     overflow: hidden;
     visibility: hidden;
     -webkit-transition: all 0.3s ease-in-out;
@@ -991,7 +998,10 @@ video {
          -o-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
 }
-
+.team-member a{
+    color:#fff !important;
+    
+}
 .team-member figure:hover figcaption{
     visibility: visible;
     color: #fff;
@@ -1487,7 +1497,17 @@ span.count-description {
     padding: 40px;
     margin: 20px;
     position: relative;
-    text-align: center;
+    line-height: 1.5;
+    background-color: #fff;
+    border: 2px solid #0ED7A3; /* Primary color, can be changed via colors.css */
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+}
+.testimonials article.speech{
+    padding: 40px;
+    margin: 20px;
+    position: relative;
     line-height: 1.5;
     background-color: #fff;
     border: 2px solid #0ED7A3; /* Primary color, can be changed via colors.css */
@@ -1496,27 +1516,7 @@ span.count-description {
             border-radius: 10px;
 }
 
-.testimonials p.speech:before{
-    content: ' ';
-    position: absolute;
-    width: 0;
-    height: 0;
-    right: 80px;
-    top: 100%;
-    border: 15px solid;
-    border-color: #0ED7A3 transparent transparent #0ED7A3; /* Primary color, can be changed via colors.css */
-}
 
-.testimonials p.speech:after{
-    content: ' ';
-    position: absolute;
-    width: 0;
-    height: 0;
-    right: 83px;
-    top: 100%;
-    border: 12px solid;
-    border-color: #fff transparent transparent #fff;
-}
 
 .client-info{
     padding: 10px;
@@ -2023,16 +2023,15 @@ footer .fa-3x{
 /* ---------------------------------------------- */
 ::-moz-selection {
     text-shadow: none;
-    background: #fcfcfc;
-    color: #0ED7A3;
+    background: #0ED7A4;
+    color: #fff;
     background:#0ED7A3;
 }
 
 ::selection {
     text-shadow: none;
-    background: #fcfcfc;
-    color: #0ED7A3;
-    background: white;
+    background: #0ED7A3;
+    color:#fff;
 }
 
 img::selection {
