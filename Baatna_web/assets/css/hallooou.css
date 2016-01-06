@@ -1772,7 +1772,7 @@ footer .fa-3x{
     padding: 10px;
     width: 60px;
     height: 60px;
-    background-color: white !important; 
+    background-color: transparent !important; 
 }
 
 
@@ -1857,7 +1857,7 @@ footer .fa-3x{
     .fund_button{
         margin-top:50px !important;
     }
-
+    
      
 
 }
@@ -1942,7 +1942,9 @@ footer .fa-3x{
     .fund_button{
         margin-top:55px !important;
     }
-
+    .img-size{
+        width:50px !important;
+    }
     
 }
 
@@ -1972,6 +1974,9 @@ footer .fa-3x{
     
     .fund_button{
         margin-top:50px !important;
+    }
+    .img-size{
+        width:50px !important;
     }
      
 }
