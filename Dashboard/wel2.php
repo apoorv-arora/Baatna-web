@@ -183,7 +183,7 @@
 <?php
 require_once('query.php');
 $q = new Query();
-$sql="select * from user ";
+$sql="select * from USER";
 $val=$q->getallentires($sql);
 foreach ($val as $value) {
 ?>

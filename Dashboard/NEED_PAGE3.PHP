@@ -55,11 +55,11 @@ require_once('query.php');
 $WISHID=$_GET['wishid'];
 $q = new Query();
 
-$sql="SELECT user.USERID , user.USER_NAME , user.PHONE , user.EMAIL , user.ADDRESS, user.FACEBOOKID , wish.STATUS, wish.WISHID , wish.TITLE , wish.DESCRIPTION , wish.TIME_OF_POST ,wish.Required_For,wish.AMOUNT,wish.STATUSHOST
-FROM wish
-INNER JOIN user
-ON wish.USERID=user.USERID
-where wish.WISHID=$WISHID";
+$sql="SELECT USER.USERID , USER.USER_NAME , USER.PHONE , USER.EMAIL , USER.ADDRESS, USER.FACEBOOKID , WISH.STATUS, WISH.WISHID , WISH.TITLE , WISH.DESCRIPTION , WISH.TIME_OF_POST ,WISH.Required_For , WISH.AMOUNT , WISH.STATUSHOST
+FROM WISH
+INNER JOIN USER
+ON WISH.USERID=USER.USERID
+where WISH.WISHID=$WISHID";
 
 $val=$q->getallentires($sql);
 

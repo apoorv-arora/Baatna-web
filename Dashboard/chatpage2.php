@@ -31,12 +31,12 @@ if(!isset($_session['baatna']))
       $WISHID=$_GET['wishid'];
       $USERID=$_GET['userid'];
       $q = new Query();
-      $sql="SELECT USER_TWO_ID from userwish where userwish.WISHID=". $WISHID ;         
+      $sql="SELECT USER_TWO_ID from USERWISH where USERWISH.WISHID=". $WISHID ;         
       $val=$q->getallentires($sql);
 
 
        //Constant User's username
-      $sql="select USER_NAME from user where USERID=$USERID";
+      $sql="select USER_NAME from USER where USERID=$USERID";
       $val2=$q->getallentires($sql);
       foreach ($val2 as $name) 
       {
@@ -51,7 +51,7 @@ if(!isset($_session['baatna']))
             $u2=$value['USER_TWO_ID']; 
 
             //Constant User_TWO_id's username
-            $sql="select USER_NAME from user where USERID=$u2";
+            $sql="select USER_NAME from USER where USERID=$u2";
             $val3=$q->getallentires($sql);
             foreach ($val3 as $name) 
             {
@@ -59,7 +59,7 @@ if(!isset($_session['baatna']))
             }
             //End
             
-            $sql3="SELECT MESSAGE , TIME_OF_MESSAGE,FROMUSERID,TOUSERID from message where WISHID=". $WISHID ." and (( FROMUSERID=".$u1 ." and TOUSERID=".$u2. ") or ( FROMUSERID=".$u2 ." and TOUSERID=".$u1. ")) order by TIME_OF_MESSAGE" ;
+            $sql3="SELECT MESSAGE , TIME_OF_MESSAGE,FROMUSERID,TOUSERID from MESSAGE where WISHID=". $WISHID ." and (( FROMUSERID=".$u1 ." and TOUSERID=".$u2. ") or ( FROMUSERID=".$u2 ." and TOUSERID=".$u1. ")) order by TIME_OF_MESSAGE" ;
             $val4=$q->getallentires($sql3);
             foreach ($val4 as $value3)
              {

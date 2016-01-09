@@ -3,16 +3,16 @@
     $i=$_GET['idd'];
     $reason=$_GET['reason'];
     $time=$_GET['time'];
-   // $sql="update user set blockun=$status where USERID=$i";
+   // $sql="update USER set blockun=$status where USERID=$i";
 
     if($reason!="empty")
     {
-        //$sql="update user set blockun=$status ,reason='$reason',blocktime='$time' where USERID=$i";
-        $sql="update user set blockun=$status where USERID=$i";
+        //$sql="update USER set blockun=$status ,reason='$reason',blocktime='$time' where USERID=$i";
+        $sql="update USER set blockun=$status where USERID=$i";
     }
     else
     {
-        $sql="update user set blockun=$status where USERID=$i";
+        $sql="update USER set blockun=$status where USERID=$i";
     }
     require_once('query.php');
     $q=new Query();

@@ -149,10 +149,10 @@ require_once('query.php');
 
 $q = new Query();
 
-$sql="SELECT user.USERID , user.USER_NAME , user.PHONE , user.EMAIL , user.FACEBOOKID , wish.STATUS, wish.WISHID , wish.TITLE , wish.DESCRIPTION , wish.TIME_OF_POST , wish.Required_For
-FROM wish
-INNER JOIN user
-ON wish.USERID=user.USERID";
+$sql="SELECT USER.USERID , USER.USER_NAME , USER.PHONE , USER.EMAIL , USER.FACEBOOKID , WISH.STATUS, WISH.WISHID , WISH.TITLE , WISH.DESCRIPTION , WISH.TIME_OF_POST , WISH.Required_For
+FROM WISH
+INNER JOIN USER
+ON WISH.USERID=USER.USERID";
 
 $val=$q->getallentires($sql);
 foreach ($val as $value) {

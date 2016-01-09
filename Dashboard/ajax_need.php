@@ -16,11 +16,11 @@
 	elseif($status=="FULFILLED")
 		$status=5;
 
-	$sql="SELECT user.USERID , user.USER_NAME , user.PHONE , user.EMAIL , user.FACEBOOKID , wish.STATUS, wish.WISHID , wish.TITLE , wish.DESCRIPTION , wish.TIME_OF_POST 
-FROM wish
-INNER JOIN user
-ON wish.USERID=user.USERID 
-where wish.STATUS=".$status;
+	$sql="SELECT USER.USERID , USER.USER_NAME , USER.PHONE , USER.EMAIL , USER.FACEBOOKID , WISH.STATUS, WISH.WISHID , WISH.TITLE , WISH.DESCRIPTION , WISH.TIME_OF_POST 
+FROM WISH
+INNER JOIN USER
+ON WISH.USERID=USER.USERID 
+where WISH.STATUS=".$status;
 	$values=$q->getallentires($sql);
 	$ans=array();
 	foreach ($values as $value)

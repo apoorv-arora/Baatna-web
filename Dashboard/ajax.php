@@ -6,7 +6,7 @@
 		$status=1;
 	elseif($status=="Unblock")
 		$status=0;
-	$sql="select * from user where blockun=$status";
+	$sql="select * from USER where blockun=$status";
 	$values=$q->getallentires($sql);
 	$ans=array();
 	foreach ($values as $value)
