@@ -1,11 +1,3 @@
-<?php
-session_start();
-if(!isset($_session['baatna']))
-{
-  header('Location:login.html');
-}
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,7 +60,7 @@ foreach ($val as $value) {
                  <input type="submit"   class="input" value="block" >
               </td>                
         <td qual="col1" class='c2 cell'></td> 
-        <td qual="col1" class='c3 cell'></td>
+        <td qual="col1" class='c3 cell'> </td>
           <?php    
             }
             else

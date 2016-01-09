@@ -55,7 +55,7 @@ require_once('query.php');
 $WISHID=$_GET['wishid'];
 $q = new Query();
 
-$sql="SELECT user.USERID , user.USER_NAME , user.PHONE , user.EMAIL , user.ADDRESS, user.FACEBOOKID , wish.STATUS, wish.WISHID , wish.TITLE , wish.DESCRIPTION , wish.TIME_OF_POST ,wish.AMOUNT,wish.STATUSHOST
+$sql="SELECT user.USERID , user.USER_NAME , user.PHONE , user.EMAIL , user.ADDRESS, user.FACEBOOKID , wish.STATUS, wish.WISHID , wish.TITLE , wish.DESCRIPTION , wish.TIME_OF_POST ,wish.Required_For,wish.AMOUNT,wish.STATUSHOST
 FROM wish
 INNER JOIN user
 ON wish.USERID=user.USERID
@@ -69,8 +69,17 @@ foreach ($val as $value) {
      <td class="cell"><?php  echo "$WISHID" ?> </a> </td>    
       <td class="cell"><?php echo($value['TITLE']); ?></td>
       <td class="cell comment more"><?php echo($value['DESCRIPTION']); ?></td>
-      <td class="cell"><?php echo($value['NO_OF_DAYS']); ?></td>
-      <td class="cell"><?php echo($value['TIME_OF_POST']); ?></td>
+      <td class="cell"><?php echo($value['Required_For']); ?></td>
+       <td class="cell">
+      <?php 
+        // Get timestamp from somewhere and assume it's $timestamp
+    $timestamp = (int) ($value['TIME_OF_POST'] / 1000);
+    // MySQL takes year-month-day hour:minute:second format
+    $mysql_datetime = date('Y-m-d H:i:s', $timestamp);
+    echo $mysql_datetime;
+     // echo($value['TIME_OF_POST']);
+      ?>
+      </td>
 
 
        <td class="cell" id="clear" gp="AMOUNT" a= <?php echo ($value['USERID']) ?> value="<?php echo($value['AMOUNT']); ?>" >
