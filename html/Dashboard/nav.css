@@ -1,0 +1,32 @@
+
+nav{
+	margin:10px;
+	box-shadow: 2px 2px 2px ;
+}
+ul{
+	border-radius:5px;
+	background-color:#999966;
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+li
+{
+	float:left;
+}
+li a {
+	display: inline-block;
+	color:white;
+	padding:20px;
+	text-decoration: none;
+}
+a:visited{
+	text-decoration: none;
+}
+li:hover:not(.active){
+	background-color:#3d3d29 ;
+}
+li.active{
+	background-color: black;
+}
