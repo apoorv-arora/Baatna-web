@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+footer{
+	color:white;
+	text-align:center;
+	background-color:#a52a2a;
+	margin-bottom: -16px;
+}
+
+#footer_container
+{
+vertical-align:top; 
+clear:both;
+text-align:center;
+margin:0 auto;
+width:980px;
+
+}
+
+.footer_allapply
+{
+	text-align:left;
+	padding:5px 30px;
+	margin:0px 60px;
+	vertical-align:text-top;
+	
+}
+.spcl_smbl
+{
+	font-size:120%;
+	
+}
+
+ul
+{
+	list-style:none;
+}
+
+footer a
+{
+	color:white;
+}
+
+footer a:visited, footer a:focus, footer a:active, footer a:hover
+{
+	text-decoration:underline;
+	color:white;
+}
+
+

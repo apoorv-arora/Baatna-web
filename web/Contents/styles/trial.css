@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face{
+	font-family: SI;
+	src: url('font.ttf');
+}	
+
+#background_section
+{ 
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	height: 630px;
+	width: 1349px; 
+	z-index: -999998;
+	position: absolute;
+	background:url(../images/background_1.jpg);
+	background-size: cover;
+}
+
