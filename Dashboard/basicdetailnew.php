@@ -39,19 +39,35 @@ require_once('query.php');
 
 
 $q = new Query();
-$sql="select * from user";
+$sql="select * from USER";
 $val=$q->getallentires($sql);
 foreach ($val as $value) {
 ?>
     <tr class="row" quality="<?php echo($value['USERID']); ?>" >
-      <td class="cell"><?php echo($value['USER_NAME']); ?></td>     
-      <td class="cell"><a href="#">link</a> </td>
+      <td class="cell">
+<?php 
+ $obj=json_decode($value['FACEBOOKDATA']);
+     
+      echo $obj->name;
+ ?></td>     
+      <td class="cell"><a target="_blank"  href="http://www.facebook.com/<?php echo $value['FACEBOOKID'] ?>">link</a> </td>
       <td class="cell"><?php echo($value['EMAIL']); ?></td>
-      <td class="cell"><?php echo($value['PHONE']); ?></td>
-   <td class="cell"><?php echo($value['TimeStamp']); ?></td>
-      <td class="cell c1"><?php echo($value['MODIFIED']); ?></td> 
-         
-          <?php 
+      <td class="cell"><?php echo($value['PhoneNumber']); ?></td>
+   <td class="cell">
+<?php
+$timestamp=(int)($value['TimeStamp']/1000);
+$mysql_datetime=date('Y-m-d H:i:s',$timestamp);
+echo $mysql_datetime; 
+?></td>
+
+  <td class="cell">
+<?php
+$timestamp=(int)($value['MODIFIED']/1000);
+$mysql_datetime=date('Y-m-d H:i:s',$timestamp);      
+echo $mysql_datetime;
+?>
+</td>  
+        <?php 
 
             if($value['blockun']==0)
             {

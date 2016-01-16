@@ -37,19 +37,26 @@ if(!isset($_session['baatna']))
               },
               success: function(result) 
                 {
-                  $('.mp').empty();
+		 $('.mp').empty();
+    var stat;
                   for(var i=0;i<result.length;i++)
                   {
-                      $('.mp').append('<tr><td><a target="_blank" href="http://www.facebook.com/'+result[i]['FACEBOOKID']+'">FACEBOOK</a></td><td>'+result[i]['PHONE']+'</td><td>'+result[i]['EMAIL']+'</td><td class="cell"><?php if('+result[i][0]+'== 0) echo "DELETED"; elseif('+result[i][0]+'==1)echo "ACTIVE"; elseif('+result[i][0]+'==2)echo "ACCEPTED"; elseif('+result[i][0]+'==3) echo "OFFERED"; elseif('+result[i][0]+'==4) echo "RECEIVED"; elseif('+result[i][0]+'==5) echo "FULFILLED";?></td><td><a target="_blank" href="need_page.php?wishid=' +result[i][1] +'">Update</a></td></tr>');
-                  }
-                       
-                console.log("ajax passed");
-             },
-              error:function(){
+                 if(result[i][0]== 0) 
+                     stat= "DELETED";
+                      else if(result[i][0]==1)
+                      stat= "ACTIVE"; 
+                    else if(result[i][0]==2)
+                      stat= "ACCEPTED"; 
+                    else if(result[i][0]==3) stat= "OFFERED"; 
+                    else if(result[i][0]==4) stat= "RECEIVED";
+                     else if(result[i][0]==5) stat="FULFILLED";
+                      $('.mp').append('<tr><td class="cell"><a target="_blank" href="http://www.facebook.com/'+result[i]['FACEBOOKID']+'">FACEBOOK</a></td><td class="cell">'+result[i]['PhoneNumber']+'</td><td class="cell">'+result[i]['EMAIL']+'</td><td class="cell">'+stat+'</td><td class="cell"><a target="_blank" href="NEED_PAGE2.php?wishid=' +result[i][1] +'&userid='+result[i]['USERID']+'">Update</a></td></tr>');
+                } 
+},
+ error:function(){
                 console.log("ajax failed");
               }
             });
-
            });
    $('#t').on('click','.clic',function()
            {
@@ -67,15 +74,24 @@ if(!isset($_session['baatna']))
               },
               success: function(result) 
                 {
-                  $('.mp').empty();
+var stat;             
+   $('.mp').empty();
                   for(var i=0;i<result.length;i++)
-                  {
-                      $('.mp').append('<tr class="row"><td class="cell"><a target="_blank" href="http://www.facebook.com/'+result[i]['FACEBOOKID']+'">FACEBOOK</a></td><td class="cell">'+result[i]['PHONE']+'</td><td class="cell">'+result[i]['EMAIL']+'</td><td class="cell">'+result[i][0]+'</td><td class="cell"><a target="_blank" href="need_page.php?wishid=' +result[i][1] +'">Update</a></td></tr>');
-                  }
-                       
-                console.log("ajax passed");
-             },
-              error:function(){
+                   {
+			if(result[i][0]== 0) 
+                     stat= "DELETED";
+                      else if(result[i][0]==1)
+                      stat= "ACTIVE"; 
+                    else if(result[i][0]==2)
+                      stat= "ACCEPTED"; 
+                    else if(result[i][0]==3) stat= "OFFERED"; 
+                    else if(result[i][0]==4) stat= "RECEIVED";
+                     else if(result[i][0]==5) stat="FULFILLED";
+                      $('.mp').append('<tr><td><a target="_blank" href="http://www.facebook.com/'+result[i]['FACEBOOKID']+'">FACEBOOK</a></td><td>'+result[i]['PhoneNumber']+'</td><td>'+result[i]['EMAIL']+'</td><td class="cell">'+stat+'</td><td><a target="_blank" href="NEED_PAGE2.php?wishid=' +result[i][1] +'&userid='+result[i]['USERID']+'">Update</a></td></tr>');
+                 }
+                  
+ },
+ error:function(){
                 console.log("ajax failed");
               }
             });
@@ -116,16 +132,16 @@ require_once('query.php');
 
 $q = new Query();
 
-$sql="SELECT user.USERID , user.USER_NAME , user.PHONE , user.EMAIL , user.FACEBOOKID , wish.STATUS , wish.WISHID , wish.TITLE , wish.DESCRIPTION , wish.TIME_OF_POST ,wish.Required_For
-FROM wish
-INNER JOIN user
-ON wish.USERID=user.USERID";
+$sql="SELECT USER.* , WISH.*
+FROM WISH
+INNER JOIN USER
+ON WISH.USERID=USER.USERID";
 
 $val=$q->getallentires($sql);
 foreach ($val as $value) {
 ?>
     <tr class="row" quality=" <?php echo($value['WISHID']) ?> ">
-       <td class="cell"><a href="NEED_PAGE3.php?wishid=<?php echo $value['WISHID'] ?>"><?php echo($value['WISHID']); ?> </a> </td>    
+       <td class="cell"><a target="_blank" href="NEED_PAGE3.php?wishid=<?php echo $value['WISHID'] ?>"><?php echo($value['WISHID']); ?> </a> </td>    
       <td class="cell"><?php echo($value['TITLE']); ?></td>
       <td class="cell comment more"><?php echo($value['DESCRIPTION']); ?></td>
       <td class="cell">
@@ -143,13 +159,17 @@ foreach ($val as $value) {
 
       <td class="cell"><?php echo($value['Required_For']); ?></td>
 
-      <td class="cell"><?php echo($value['USER_NAME']); ?> </td>
+      <td class="cell"><?php 
+	 $obj=json_decode($value['FACEBOOKDATA']);
+     
+      echo $obj->name;	 	
+ ?> </td>
 
 
       <td class="cell"><?php echo($value['EMAIL']); ?> </td>
 
 
-      <td class="cell"><?php echo($value['PHONE']); ?> </td>
+      <td class="cell"><?php echo($value['PhoneNumber']); ?> </td>
 
       <td class="cell" at= <?php echo ($value['WISHID']) ?> >
       <button type="button" class="btn btn-info btn-lg clic" data-toggle="modal" data-target="#myModal" >Offers</button>

@@ -23,8 +23,9 @@
               success: function(result){
                for (var i = 0;i<result.length ; i++)
                 {
-                  	$('#t1').append('<tr class="row"><td class="cell">'+result[i]['WISHID']+'</td><td class="cell">'+result[i]['TITLE']+'</td><td class="cell">'+result[i]['DESCRIPTION']+'</td><td class="cell">'+result[i]['timeperiod']+'</td><td class="cell">'+result[i]['TIME_OF_POST']+'</td><td class="cell">'+result[i]['USER_NAME']+'</td><td class="cell">'+result[i]['PHONE']+'</td><td class="cell">'+result[i]['EMAIL']+'</td><td class="cell" at="'+result[i]['WISHID']+'"><button type="button" class="btn btn-info btn-lg clic" data-toggle="modal" data-target="#myModal" >Offers</button><div class="modal fade" id="myModal" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><div><table class="sort" border="2px"><thead><tr class="row header blue"><th  class="cell" width="50">Facebook</th><th class="cell" width="50">Phone</th><th class="cell" width="50">Email</th><th class="cell" width="50">Status</th><th class="cell" width="50">Update</th></tr></thead><tbody class="mp"></tbody></table></div></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div></td><td> '+v+'</td><td class="rem cell"><input type="submit" qual="r" value="remove"></td><td class="cell">'+result[i]['logisticid']+'</td></tr>');
-            }
+	$('#t1').append('<tr class="row"><td class="cell">'+result[i][0]+'</td><td class="cell">'+result[i][1]+'</td><td class="cell">'+result[i][2]+'</td><td class="cell">'+result[i][3]+'</td><td class="cell">'+result[i][4]+'</td><td class="cell">'+result[i][5]+'</td><td class="cell">'+result[i][6]+'</td><td class="cell">'+result[i][7]+'</td><td class="cell" at=""><button type="button" class="btn btn-info btn-lg clic" data-toggle="modal" data-target="#myModal" >Offers</button><div class="modal fade" id="myModal" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><div><table class="sort" border="2px"><thead><tr class="row header blue"><th  class="cell" width="50">Facebook</th><th class="cell" width="50">Phone</th><th class="cell" width="50">Email</th><th class="cell" width="50">Status</th><th class="cell" width="50">Update</th></tr></thead><tbody class="mp"></tbody></table></div></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div></td><td> '+v+'</td><td class="rem cell"><input type="submit" qual="r" value="remove"></td><td class="cell">'+result[i]['0']+'</td></tr>');
+            
+}
              },
               error:function(){
                 console.log("ajax failed");
@@ -55,7 +56,7 @@
                   $('.mp').empty();
                   for(var i=0;i<result.length;i++)
                   {
-                     $('.mp').append('<tr class="row"><td class="cell"><a target="_blank" href="http://www.facebook.com/'+result[i]['FACEBOOKID']+'">FACEBOOK</a></td><td class="cell">'+result[i]['PHONE']+'</td><td class="cell">'+result[i]['EMAIL']+'</td><td class="cell">'+result[i][0]+'</td><td class="cell"><a target="_blank" href="need_page.php?wishid=' +result[i][1] +'">Update</a></td></tr>');
+                     $('.mp').append('<tr class="row"><td class="cell"><a target="_blank" href="http://www.facebook.com/'+result[i]['FACEBOOKID']+'">FACEBOOK</a></td><td class="cell">'+result[i]['PhoneNumber']+'</td><td class="cell">'+result[i]['EMAIL']+'</td><td class="cell">'+result[i][0]+'</td><td class="cell"><a target="_blank" href="NEED_PAGE2.php?wishid=' +result[i][1] +'&userid='+result[i]['USERID']+'">Update</a></td></tr>');
                   }
                        
                 console.log("ajax passed");
@@ -85,7 +86,7 @@
                   $('.mp').empty();
                   for(var i=0;i<result.length;i++)
                   {
-                      $('.mp').append('<tr class="row"><td class="cell"><a target="_blank" href="http://www.facebook.com/'+result[i]['FACEBOOKID']+'">FACEBOOK</a></td><td class="cell">'+result[i]['PHONE']+'</td><td class="cell">'+result[i]['EMAIL']+'</td><td class="cell"><?php if('+result[i][0]+'== 0) echo "DELETED"; elseif('+result[i][0]+'==1)echo "ACTIVE"; elseif('+result[i][0]+'==2)echo "ACCEPTED"; elseif('+result[i][0]+'==3) echo "OFFERED"; elseif('+result[i][0]+'==4) echo "RECEIVED"; elseif('+result[i][0]+'==5) echo "FULFILLED";?></td><td class="cell"><a target="_blank" href="need_page.php?wishid=' +result[i][1] +'">Update</a></td></tr>');
+                      $('.mp').append('<tr class="row"><td class="cell"><a target="_blank" href="http://www.facebook.com/'+result[i]['FACEBOOKID']+'">FACEBOOK</a></td><td class="cell">'+result[i]['PhoneNumber']+'</td><td class="cell">'+result[i]['EMAIL']+'</td><td class="cell"><?php if('+result[i][0]+'== 0) echo "DELETED"; elseif('+result[i][0]+'==1)echo "ACTIVE"; elseif('+result[i][0]+'==2)echo "ACCEPTED"; elseif('+result[i][0]+'==3) echo "OFFERED"; elseif('+result[i][0]+'==4) echo "RECEIVED"; elseif('+result[i][0]+'==5) echo "FULFILLED";?></td><td class="cell"><a target="_blank" href="NEED_PAGE2.php?wishid=' +result[i][1] +'&userid='+result[i]['USERID']+'">Update</a></td></tr>');
                   }
                        
                 console.log("ajax passed");
@@ -149,10 +150,10 @@ require_once('query.php');
 
 $q = new Query();
 
-$sql="SELECT user.USERID , user.USER_NAME , user.PHONE , user.EMAIL , user.FACEBOOKID , wish.STATUS, wish.WISHID , wish.TITLE , wish.DESCRIPTION , wish.TIME_OF_POST , wish.Required_For
-FROM wish
-INNER JOIN user
-ON wish.USERID=user.USERID";
+$sql="SELECT USER.FACEBOOKDATA,USER.USERID , USER.USER_NAME , USER.PhoneNumber , USER.EMAIL , USER.FACEBOOKID , WISH.Required_For , WISH.STATUS, WISH.WISHID , WISH.TITLE , WISH.DESCRIPTION , WISH.TIME_OF_POST , WISH.Required_For
+FROM WISH
+INNER JOIN USER
+ON WISH.USERID=USER.USERID";
 
 $val=$q->getallentires($sql);
 foreach ($val as $value) {
@@ -163,7 +164,7 @@ foreach ($val as $value) {
       <td class="cell comment more">
 
       <?php echo($value['DESCRIPTION']); ?></td>
-       <td class="cell"><?php echo($value['Required_for']); ?></td>     
+       <td class="cell"><?php echo($value['Required_For']); ?></td>     
        <td class="cell">
   <?php 
         // Get timestamp from somewhere and assume it's $timestamp
@@ -174,8 +175,10 @@ foreach ($val as $value) {
      // echo($value['TIME_OF_POST']);
       ?>
       </td>
-      <td class="cell"><?php echo($value['USER_NAME']); ?></td>     
-      <td class="cell"><?php echo($value['PHONE']); ?></td>
+      <td class="cell"><?php $obj=json_decode($value['FACEBOOKDATA']);
+     
+      echo $obj->name; ?></td>     
+      <td class="cell"><?php echo($value['PhoneNumber']); ?></td>
       <td class="cell"><?php echo($value['EMAIL']); ?></td>
 
          
