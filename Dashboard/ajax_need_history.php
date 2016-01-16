@@ -1,7 +1,7 @@
 
 <?php
     $i=$_GET['idd'];
-    $sql="delete from wish where WISHID=$i ";
+    $sql="update wish set status=0 where WISHID=$i ";
     require_once('query.php');
     $q=new Query();
      if($q->echoaja($sql))

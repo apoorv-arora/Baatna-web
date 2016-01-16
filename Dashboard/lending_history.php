@@ -1,10 +1,11 @@
 <?php
+/*
 session_start();
 if(!isset($_session['baatna']))
 {
   header('Location:login.html');
 }
-
+*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -115,7 +116,7 @@ require_once('query.php');
 
 $q = new Query();
 
-$sql="SELECT user.USERID , user.USER_NAME , user.PHONE , user.EMAIL , user.FACEBOOKID , wish.STATUS , wish.WISHID , wish.TITLE , wish.DESCRIPTION , wish.TIME_OF_POST
+$sql="SELECT user.USERID , user.USER_NAME , user.PHONE , user.EMAIL , user.FACEBOOKID , wish.STATUS , wish.WISHID , wish.TITLE , wish.DESCRIPTION , wish.TIME_OF_POST ,wish.Required_For
 FROM wish
 INNER JOIN user
 ON wish.USERID=user.USERID";
@@ -127,11 +128,20 @@ foreach ($val as $value) {
        <td class="cell"><a href="NEED_PAGE3.php?wishid=<?php echo $value['WISHID'] ?>"><?php echo($value['WISHID']); ?> </a> </td>    
       <td class="cell"><?php echo($value['TITLE']); ?></td>
       <td class="cell comment more"><?php echo($value['DESCRIPTION']); ?></td>
-      <td class="cell"><?php echo($value['TIME_OF_POST']); ?></td>
+      <td class="cell">
+      <?php 
+        // Get timestamp from somewhere and assume it's $timestamp
+    $timestamp = (int) ($value['TIME_OF_POST'] / 1000);
+    // MySQL takes year-month-day hour:minute:second format
+    $mysql_datetime = date('Y-m-d H:i:s', $timestamp);
+    echo $mysql_datetime;
+     // echo($value['TIME_OF_POST']);
+      ?>
+      </td>
 
       <td class="cell"><?php echo($value['offeredtime']); ?> </td>
 
-      <td class="cell"><?php echo($value['timeperiod']); ?></td>
+      <td class="cell"><?php echo($value['Required_For']); ?></td>
 
       <td class="cell"><?php echo($value['USER_NAME']); ?> </td>
 
@@ -170,8 +180,7 @@ foreach ($val as $value) {
       </div>
       </div>
       </td>
-     
-<td>
+      <td>
 <?php
           if($value['STATUS']==0)
             echo "DELETED";
@@ -187,7 +196,7 @@ foreach ($val as $value) {
               echo "FULFILLED";
 ?>
        </td> 
-       <td> <a target="_blank" href="chatpage.php?wishid=<?php echo $value['WISHID'] ?>">CHAT</a></td>
+       <td> <a target="_blank" href="chatpage2.php?wishid=<?php echo $value['WISHID'] ?>&userid=<?php echo $value['USERID'] ?>">CHAT</a></td>
 
 
        </tr>
