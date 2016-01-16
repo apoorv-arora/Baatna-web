@@ -1,0 +1,1 @@
+0 0 * * * /usr/bin/curl -o temp.txt http://localhost/automata/dump.php
