@@ -1389,7 +1389,7 @@ ul.project-meta{
   background-color: #0ED7A3; /* Primary color, can be changed via colors.css */
   background-repeat: no-repeat;
   background-size: 32px 64px;
-  background-image: url("../images/cd-icon-controller.svg");
+  /*background-image: url("../images/cd-icon-controller.svg");*/
 }
 .no-touch #cd-zoom-in:hover, .no-touch #cd-zoom-out:hover {
   background-color: #d36868;
