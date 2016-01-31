@@ -11,7 +11,6 @@ function respond($err, $msg, $data = []) { // Function to return JSON response
 function getToken($email) {
   return password_hash($email, PASSWORD_BCRYPT);
 }
-echo"read";
 
 require_once('C:/wamp/www/Baatna-web/vendor/autoload.php');
 $mail = new PHPMailer;

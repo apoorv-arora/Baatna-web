@@ -1484,6 +1484,12 @@ span.count-description {
     margin: 0;
 }
 
+#openings .col-md-10{
+    padding-bottom: 15px !important;
+}
+#openings .panel-title:hover{
+    color:black !important;
+}
 
 /* 9:   Client testimonials section
 /* ---------------------------------------------- */
@@ -1774,6 +1780,7 @@ footer .fa-3x{
     height: 60px;
     background-color: transparent !important; 
 }
+
 
 
 
