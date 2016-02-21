@@ -10,7 +10,7 @@ if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 
 
   //Set who the message is to be sent to
-  $mail->addAddress('bansalaman2905@gmail.com',$_POST['name']);
+  $mail->addAddress('hello@baatna.com',$_POST['name']);
 
   //Set the subject line
   $mail->Subject = $_POST['email'];
