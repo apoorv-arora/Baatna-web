@@ -899,6 +899,19 @@ video {
 .products-container p{
     color:#fff;
 }
+.bk-image{
+    background: url(../images/nexus4_portrait.png) no-repeat;
+    background-position: center ;
+}
+.img-response{
+   
+    margin-top: 30% !important;
+
+}
+.carousel-control1{
+    top:48% !important;
+    margin:-5% !important;
+}
 
 .products-container span.icon{
     display: inline-block;  
@@ -1389,7 +1402,7 @@ ul.project-meta{
   background-color: #0ED7A3; /* Primary color, can be changed via colors.css */
   background-repeat: no-repeat;
   background-size: 32px 64px;
-  background-image: url("../images/cd-icon-controller.svg");
+  /*background-image: url("../images/cd-icon-controller.svg");*/
 }
 .no-touch #cd-zoom-in:hover, .no-touch #cd-zoom-out:hover {
   background-color: #d36868;
@@ -1484,6 +1497,12 @@ span.count-description {
     margin: 0;
 }
 
+#openings .col-md-10{
+    padding-bottom: 15px !important;
+}
+#openings .panel-title:hover{
+    color:black !important;
+}
 
 /* 9:   Client testimonials section
 /* ---------------------------------------------- */
@@ -1777,6 +1796,7 @@ footer .fa-3x{
 
 
 
+
 /* 14:  MEDIA QUERIES START
 /* ---------------------------------------------- */
 
@@ -1852,7 +1872,7 @@ footer .fa-3x{
         width:100% !important;
     }
     .feature_image{
-        width: 80% !important;
+        width: 82% !important;
     }
     .fund_button{
         margin-top:50px !important;
@@ -1937,13 +1957,23 @@ footer .fa-3x{
         width:100% !important;
     }
     .feature_image{
-        width: 80% !important;
+        width: 90% !important;
     }
     .fund_button{
         margin-top:55px !important;
     }
+    .media{
+        display:none !important;
+    }
     .img-size{
         width:50px !important;
+    }
+    .responsive{
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+    .carousel-control1{
+        margin:-12% !important;
     }
     
 }
@@ -1969,7 +1999,7 @@ footer .fa-3x{
         width:100% !important;
     }
     .feature_image{
-        width: 80% !important;
+        width: 90% !important;
     }
     
     .fund_button{
@@ -1977,6 +2007,12 @@ footer .fa-3x{
     }
     .img-size{
         width:50px !important;
+    }
+    .media{
+        display:none !important;
+    }
+    .media{
+        display:none !important;
     }
      
 }
